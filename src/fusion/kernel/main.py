@@ -9,7 +9,6 @@
 from preprocess import *
 from candidate import *
 from disambiguation import *
-from sameas import *
 
 
 # Step 1: 原始数据预处理
@@ -149,93 +148,42 @@ def candidate_generation():
 
 # Step 3: 实体消岐
 def entity_disambiguation():
-    # baidubaike
     table_name = 'table_123'
     table_path = '../../../data/table/table_123.xls'
-    kb_name = 'baidubaike'
-    candidate_name = 'baidubaike_candidate_entities'
-    candidate_path = '../../../data/candidate/baidubaike_candidate_entities.txt'
-    graph_path = '../../../data/disambiguation/baidubaike/graph/'
-    disambiguation_output_path = '../../../data/disambiguation/baidubaike/result/'
-    infobox_property_path = '../../../data/property/baidubaike_infobox_properties.txt'
-    abstracts_path = '../../../data/abstract/baidubaike_abstracts.txt'
-
-    baidubaike_judger = Disambiguation(table_name, table_path, kb_name, candidate_name, candidate_path, graph_path, disambiguation_output_path, infobox_property_path, abstracts_path)
-
-    print 'Disambiguating candidate entities based on ' + kb_name + ':'
-    baidubaike_judger.disambiguation()
-
-
-    # hudongbaike
-    table_name = 'table_123'
-    table_path = '../../../data/table/table_123.xls'
-    kb_name = 'hudongbaike'
-    candidate_name = 'hudongbaike_candidate_entities'
-    candidate_path = '../../../data/candidate/hudongbaike_candidate_entities.txt'
-    graph_path = '../../../data/disambiguation/hudongbaike/graph/'
-    disambiguation_output_path = '../../../data/disambiguation/hudongbaike/result/'
-    infobox_property_path = '../../../data/property/hudongbaike_infobox_properties.txt'
-    abstracts_path = '../../../data/abstract/hudongbaike_abstracts.txt'
-
-    hudongbaike_judger = Disambiguation(table_name, table_path, kb_name, candidate_name, candidate_path, graph_path, disambiguation_output_path, infobox_property_path, abstracts_path)
-
-    print 'Disambiguating candidate entities based on ' + kb_name + ':'
-    hudongbaike_judger.disambiguation()
-
-
-    # zhwiki
-    table_name = 'table_123'
-    table_path = '../../../data/table/table_123.xls'
-    kb_name = 'zhwiki'
-    candidate_name = 'zhwiki_candidate_entities'
-    candidate_path = '../../../data/candidate/zhwiki_candidate_entities.txt'
-    graph_path = '../../../data/disambiguation/zhwiki/graph/'
-    disambiguation_output_path = '../../../data/disambiguation/zhwiki/result/'
-    infobox_property_path = '../../../data/property/zhwiki_infobox_properties.txt'
-    abstracts_path = '../../../data/abstract/zhwiki_abstracts.txt'
-
-    zhwiki_judger = Disambiguation(table_name, table_path, kb_name, candidate_name, candidate_path, graph_path, disambiguation_output_path, infobox_property_path, abstracts_path)
-
-    print 'Disambiguating candidate entities based on ' + kb_name + ':'
-    zhwiki_judger.disambiguation()
-
-
-# Step 4: 利用多知识库间sameAs关系提升链接质量
-def sameAs():
-    table_name = 'table_123'
-    table_path = '../../../data/table/table_123.xls'
-    baidubaike_edg_path = '../../../data/disambiguation/baidubaike/graph/'
-    hudongbaike_edg_path = '../../../data/disambiguation/hudongbaike/graph/'
-    zhwiki_edg_path = '../../../data/disambiguation/zhwiki/graph/'
+    baidubaike_candidate_path = '../../../data/candidate/baidubaike_candidate_entities.txt'
+    hudongbaike_candidate_path = '../../../data/candidate/hudongbaike_candidate_entities.txt'
+    zhwiki_candidate_path = '../../../data/candidate/zhwiki_candidate_entities.txt'
+    baidubaike_infobox_property_path = '../../../data/property/baidubaike_infobox_properties.txt'
+    hudongbaike_infobox_property_path = '../../../data/property/hudongbaike_infobox_properties.txt'
+    zhwiki_infobox_property_path = '../../../data/property/zhwiki_infobox_properties.txt'
+    baidubaike_abstracts_path = '../../../data/abstract/baidubaike_abstracts.txt'
+    hudongbaike_abstracts_path = '../../../data/abstract/hudongbaike_abstracts.txt'
+    zhwiki_abstracts_path = '../../../data/abstract/zhwiki_abstracts.txt'
     baidubaike_hudongbaike_sameas_path = '../../../data/sameas/baidubaike_hudongbaike_sameas.txt'
     hudongbaike_zhwiki_sameas_path = '../../../data/sameas/hudongbaike_zhwiki_sameas.txt'
     zhwiki_baidubaike_sameas_path = '../../../data/sameas/zhwiki_baidubaike_sameas.txt'
-    result_path = '../../../data/final/jist2016/'
+    graph_path = '../../../data/disambiguation/fusion/graph/'
+    result_path = '../../../data/disambiguation/fusion/result/'
+    final_path = '../../../data/final/fusion/multiple_kb_el_result.txt'
 
-    multiple_kb_improver = SameAs(table_name, table_path, baidubaike_edg_path, hudongbaike_edg_path, zhwiki_edg_path, baidubaike_hudongbaike_sameas_path, hudongbaike_zhwiki_sameas_path, zhwiki_baidubaike_sameas_path, result_path)
+    judger = Disambiguation(table_name, table_path, baidubaike_candidate_path, hudongbaike_candidate_path, zhwiki_candidate_path, baidubaike_infobox_property_path, hudongbaike_infobox_property_path, zhwiki_infobox_property_path, baidubaike_abstracts_path, hudongbaike_abstracts_path, zhwiki_abstracts_path, baidubaike_hudongbaike_sameas_path, hudongbaike_zhwiki_sameas_path, zhwiki_baidubaike_sameas_path, graph_path, result_path, final_path)
 
-    # print 'Extracting sameas relations from three KBs......',
-    # multiple_kb_improver.extract_sameAs()
-    # print 'Done!'
+    print 'Disambiguating candidate entities:'
+    judger.disambiguation()
 
-    print 'Conbining single kb EL results into one file......',
-    multiple_kb_improver.conbine_single_kb_el_result()
-    print 'Done!'
-
-    print 'Improving entity linking with multiple linked KBs......',
-    multiple_kb_improver.rerank()
+    print 'Conbining multiple kb EL results into one file......',
+    judger.conbine_el_result()
     print 'Done!'
 
 
 def main():
     print "Entity Linking System in Web Tables with Multiple Linked Knowledge Bases"
-    print "Version 2.0"
+    print "Version 2.1"
     print "Copyright @2017/3/1 Shengjia Yan. All Rights Reserved."
 
     # preprocess()
     # candidate_generation()
     entity_disambiguation()
-    sameAs()
 
 if __name__ == "__main__":
     main()
