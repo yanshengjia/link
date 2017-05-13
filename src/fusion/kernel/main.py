@@ -9,6 +9,8 @@
 from preprocess import *
 from candidate import *
 from disambiguation import *
+from result import *
+from mark import *
 
 
 # Step 1: 原始数据预处理
@@ -105,8 +107,8 @@ def preprocess():
 # Step 2: 候选实体生成
 def candidate_generation():
     # baidubaike
-    table_name = 'table_123'
-    table_path = '../../../data/table/table_123.xls'
+    table_name = 'table'
+    table_path = '../../../data/table/table.xls'
     kb_name = 'baidubaike'
     entity_path = '../../../data/entity/baidubaike_entity_synonym.txt'
     candidate_path = '../../../data/candidate/baidubaike_candidate_entities.txt'
@@ -119,8 +121,8 @@ def candidate_generation():
 
 
     # hudongbaike
-    table_name = 'table_123'
-    table_path = '../../../data/table/table_123.xls'
+    table_name = 'table'
+    table_path = '../../../data/table/table.xls'
     kb_name = 'hudongbaike'
     entity_path = '../../../data/entity/hudongbaike_entity_synonym.txt'
     candidate_path = '../../../data/candidate/hudongbaike_candidate_entities.txt'
@@ -133,8 +135,8 @@ def candidate_generation():
 
 
     # zhwiki
-    table_name = 'table_123'
-    table_path = '../../../data/table/table_123.xls'
+    table_name = 'table'
+    table_path = '../../../data/table/table.xls'
     kb_name = 'zhwiki'
     entity_path = '../../../data/entity/zhwiki_entity_synonym.txt'
     candidate_path = '../../../data/candidate/zhwiki_candidate_entities.txt'
@@ -148,8 +150,8 @@ def candidate_generation():
 
 # Step 3: 实体消岐
 def entity_disambiguation():
-    table_name = 'table_123'
-    table_path = '../../../data/table/table_123.xls'
+    table_name = 'table'
+    table_path = '../../../data/table/table.xls'
     baidubaike_candidate_path = '../../../data/candidate/baidubaike_candidate_entities.txt'
     hudongbaike_candidate_path = '../../../data/candidate/hudongbaike_candidate_entities.txt'
     zhwiki_candidate_path = '../../../data/candidate/zhwiki_candidate_entities.txt'
@@ -176,14 +178,55 @@ def entity_disambiguation():
     print 'Done!'
 
 
+# 人工标注
+def mark():
+    table_path = '../../../data/table/table.xls'
+    baidubaike_candidates_path = '../../../data/candidate/baidubaike_candidate_entities.txt'
+    hudongbaike_candidates_path = '../../../data/candidate/hudongbaike_candidate_entities.txt'
+    zhwiki_candidates_path = '../../../data/candidate/zhwiki_candidate_entities.txt'
+    baidubaike_single_human_mark_path = '../../../data/mark/baidubaike/'
+    hudongbaike_single_human_mark_path = '../../../data/mark/hudongbaike/'
+    zhwiki_single_human_mark_path = '../../../data/mark/zhwiki/'
+    baidubaike_total_human_mark_path = '../../../data/mark/baidubaike/baidubaike_human_mark.txt'
+    hudongbaike_total_human_mark_path = '../../../data/mark/hudongbaike/hudongbaike_human_mark.txt'
+    zhwiki_total_human_mark_path = '../../../data/mark/zhwiki/zhwiki_human_mark.txt'
+
+    marker = Mark(table_path, baidubaike_candidates_path, hudongbaike_candidates_path, zhwiki_candidates_path, baidubaike_single_human_mark_path, hudongbaike_single_human_mark_path, zhwiki_single_human_mark_path, baidubaike_total_human_mark_path, hudongbaike_total_human_mark_path, zhwiki_total_human_mark_path)
+
+    print 'Marking mentions in tables with 3 KBs......'
+    marker.mark()
+    print 'Done!'
+
+    print 'Conbining human mark files to one file......'
+    marker.conbine()
+    print 'Done!'
+
+
+# 结果对比
+def result():
+    table_path = '../../../data/table/table.xls'
+    multiple_kb_el_result_path = '../../../data/final/fusion/multiple_kb_el_result.txt'
+    baidubaike_human_mark_entity_path = '../../../data/mark/baidubaike_human_mark.txt'
+    hudongbaike_human_mark_entity_path = '../../../data/mark/hudongbaike_human_mark.txt'
+    zhwiki_human_mark_entity_path = '../../../data/mark/zhwiki_human_mark.txt'
+
+    comparer = Result(table_path, multiple_kb_el_result_path, baidubaike_human_mark_entity_path, hudongbaike_human_mark_entity_path, zhwiki_human_mark_entity_path)
+
+    print 'Comparing System EL Results with Huamn Mark Results......'
+    comparer.compare()
+    print 'Done!'
+
+
 def main():
     print "Entity Linking System in Web Tables with Multiple Linked Knowledge Bases"
     print "Version 2.1"
     print "Copyright @2017/3/1 Shengjia Yan. All Rights Reserved."
 
+    mark()
     # preprocess()
     # candidate_generation()
-    entity_disambiguation()
+    # entity_disambiguation()
+    # result()
 
 if __name__ == "__main__":
     main()
