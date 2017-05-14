@@ -37,12 +37,6 @@ class Mark(object):
 
     def mark(self):
         try:
-            ################
-            multiple_kb_el_result_file = open('../../../data/final/jist2016/multiple_kb_el_result.txt')
-            multiple_kb_el_result = multiple_kb_el_result_file.read()
-            multiple_kb_el_result_json = json.loads(multiple_kb_el_result, encoding='utf8')
-            ###############
-
             baidubaike_candidates_file = open(self.baidubaike_candidates_path, 'r')
             baidubaike_candidates = baidubaike_candidates_file.read()
             baidubaike_candidates_json = json.loads(baidubaike_candidates, encoding='utf8')
@@ -57,7 +51,7 @@ class Mark(object):
 
 
             # for i in range(self.table_quantity):
-            for i in range(28, 123):
+            for i in range(117, 123):
                 table = self.tables[i]
                 row_num = table.row_num
                 col_num = table.col_num

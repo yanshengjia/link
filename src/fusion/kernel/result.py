@@ -25,6 +25,7 @@ class Result(object):
         self.hudongbaike_human_mark_entity_path = hudongbaike_human_mark_entity_path
         self.zhwiki_human_mark_entity_path = zhwiki_human_mark_entity_path
 
+    # EL 结果在三个知识库上的衡量结果
     def compare(self):
         try:
             baidubaike_human_mark_entity_file = open(self.baidubaike_human_mark_entity_path, 'r')
@@ -44,7 +45,12 @@ class Result(object):
             multiple_kb_el_result_json = json.loads(multiple_kb_el_result, encoding='utf8')
 
             # Multiple Linked KBs
+            # EL 结果在三个知识库上的衡量结果
             print 'The Result of Entity Linking with Multiple Linked KBs:'
+
+            # baidubaike
+            print 'baidubaike:'
+            kb = 'baidubaike'
             total_mention_quantity = 0
             total_correct_link_quantity = 0
 
@@ -59,34 +65,127 @@ class Result(object):
                     if r == 0:
                         continue
                     for c in range(col_num):
-                        human_mark_entity_list = []  # [(entity1, kb1), (entity2, kb2), (entity3, kb3)]
-
-                        if baidubaike_human_mark_entity_json[i][r][c]['entity'] != 'Null':
-                            human_mark_entity_list.append(baidubaike_human_mark_entity_json[i][r][c]['entity'])
-                        if hudongbaike_human_mark_entity_json[i][r][c]['entity'] != 'Null':
-                            human_mark_entity_list.append(hudongbaike_human_mark_entity_json[i][r][c]['entity'])
-                        if zhwiki_human_mark_entity_json[i][r][c]['entity'] != 'Null':
-                            human_mark_entity_list.append(zhwiki_human_mark_entity_json[i][r][c]['entity'])
-
-                        if len(human_mark_entity_list) == 0:
+                        if baidubaike_human_mark_entity_json[i][r][c]['entity'] == 'Null':
                             continue
 
-                        system_mark_entity_list = multiple_kb_el_result_json[i][r][c]['entity']
+                        human_mark_entity = baidubaike_human_mark_entity_json[i][r][c]['entity']
+                        system_mark_entity = 'Null'
+                        entity_list = multiple_kb_el_result_json[i][r][c]['entity']
 
-                        for entity in system_mark_entity_list:
-                            e = entity[0]
-                            if e in human_mark_entity_list:
-                                current_table_correct_link_quantity += 1
-                                total_correct_link_quantity += 1
+                        for tuple in entity_list:
+                            if tuple[1] == kb:
+                                system_mark_entity = tuple[0]
                                 break
+
+                        if human_mark_entity == system_mark_entity:
+                            current_table_correct_link_quantity += 1
+                            total_correct_link_quantity += 1
 
                         current_table_mention_quantity += 1
                         total_mention_quantity += 1
 
-                current_table_precision = float(current_table_correct_link_quantity) / current_table_mention_quantity
-                print 'Table ' + str(i) + ' Precision: ' + str(current_table_correct_link_quantity) + '/' + str(current_table_mention_quantity) + ' = ' + str(current_table_precision)
+                if current_table_mention_quantity == 0:
+                    print 'Table ' + str(i) + 'has no Mention!'
+                    continue
+                else:
+                    current_table_precision = float(current_table_correct_link_quantity) / current_table_mention_quantity
+                    print 'Table ' + str(i) + ' Precision: ' + str(current_table_correct_link_quantity) + '/' + str(current_table_mention_quantity) + ' = ' + str(current_table_precision)
             total_precision = float(total_correct_link_quantity) / total_mention_quantity
-            print 'Total Precision on Multiple Linked KBs: ' + str(total_correct_link_quantity) + '/' + str(total_mention_quantity) + ' = ' + str(total_precision)
+            print 'Total Precision Evaluated with baidubaike: ' + str(total_correct_link_quantity) + '/' + str(total_mention_quantity) + ' = ' + str(total_precision)
+            print
+
+
+            # hudongbaike
+            print 'hudongbaike:'
+            kb = 'hudongbaike'
+            total_mention_quantity = 0
+            total_correct_link_quantity = 0
+
+            for i in range(self.table_quantity):
+                table = self.tables[i]
+                row_num = table.row_num
+                col_num = table.col_num
+                current_table_mention_quantity = 0
+                current_table_correct_link_quantity = 0
+
+                for r in range(row_num):
+                    if r == 0:
+                        continue
+                    for c in range(col_num):
+                        if hudongbaike_human_mark_entity_json[i][r][c]['entity'] == 'Null':
+                            continue
+
+                        human_mark_entity = hudongbaike_human_mark_entity_json[i][r][c]['entity']
+                        system_mark_entity = 'Null'
+                        entity_list = multiple_kb_el_result_json[i][r][c]['entity']
+
+                        for tuple in entity_list:
+                            if tuple[1] == kb:
+                                system_mark_entity = tuple[0]
+                                break
+
+                        if human_mark_entity == system_mark_entity:
+                            current_table_correct_link_quantity += 1
+                            total_correct_link_quantity += 1
+
+                        current_table_mention_quantity += 1
+                        total_mention_quantity += 1
+
+                if current_table_mention_quantity == 0:
+                    print 'Table ' + str(i) + 'has no Mention!'
+                    continue
+                else:
+                    current_table_precision = float(current_table_correct_link_quantity) / current_table_mention_quantity
+                    print 'Table ' + str(i) + ' Precision: ' + str(current_table_correct_link_quantity) + '/' + str(current_table_mention_quantity) + ' = ' + str(current_table_precision)
+            total_precision = float(total_correct_link_quantity) / total_mention_quantity
+            print 'Total Precision Evaluated with hudongbaike: ' + str(total_correct_link_quantity) + '/' + str(total_mention_quantity) + ' = ' + str(total_precision)
+            print
+
+
+            # zhwiki
+            print 'zhwiki:'
+            kb = 'zhwiki'
+            total_mention_quantity = 0
+            total_correct_link_quantity = 0
+
+            for i in range(self.table_quantity):
+                table = self.tables[i]
+                row_num = table.row_num
+                col_num = table.col_num
+                current_table_mention_quantity = 0
+                current_table_correct_link_quantity = 0
+
+                for r in range(row_num):
+                    if r == 0:
+                        continue
+                    for c in range(col_num):
+                        if zhwiki_human_mark_entity_json[i][r][c]['entity'] == 'Null':
+                            continue
+
+                        human_mark_entity = zhwiki_human_mark_entity_json[i][r][c]['entity']
+                        system_mark_entity = 'Null'
+                        entity_list = multiple_kb_el_result_json[i][r][c]['entity']
+
+                        for tuple in entity_list:
+                            if tuple[1] == kb:
+                                system_mark_entity = tuple[0]
+                                break
+
+                        if human_mark_entity == system_mark_entity:
+                            current_table_correct_link_quantity += 1
+                            total_correct_link_quantity += 1
+
+                        current_table_mention_quantity += 1
+                        total_mention_quantity += 1
+
+                if current_table_mention_quantity == 0:
+                    print 'Table ' + str(i) + 'has no Mention!'
+                    continue
+                else:
+                    current_table_precision = float(current_table_correct_link_quantity) / current_table_mention_quantity
+                    print 'Table ' + str(i) + ' Precision: ' + str(current_table_correct_link_quantity) + '/' + str(current_table_mention_quantity) + ' = ' + str(current_table_precision)
+            total_precision = float(total_correct_link_quantity) / total_mention_quantity
+            print 'Total Precision Evaluated with zhwiki: ' + str(total_correct_link_quantity) + '/' + str(total_mention_quantity) + ' = ' + str(total_precision)
             print
 
         finally:

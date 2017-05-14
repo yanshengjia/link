@@ -46,7 +46,7 @@ class EntityDisambiguationGraph(object):
     # entitySet_node_end: entitySet node 编号的结束
     # node_quantity: 所有节点的总数
     # alpha1, beta1, alpha2, beta2: 计算语义相似度时的参数
-    # bonus: 当 mention 与 candidate entity 完全相等时，该实体集合节点上概率的增量
+    # bonus: 实体集合节点上概率奖励增量，为其所在的候选 entitySet 集合中所有 entitySet 节点概率的平均值
     # A: 概率转移列表
     # r: 消岐结果概率列表
     def __init__(self, table_number, table, baidubaike_candidates, hudongbaike_candidates, zhwiki_candidates, baidubaike_infobox_property, hudongbaike_infobox_property, zhwiki_infobox_property, baidubaike_abstracts, hudongbaike_abstracts, zhwiki_abstracts, baidubaike_hudongbaike_sameas, hudongbaike_zhwiki_sameas, zhwiki_baidubaike_sameas, graph_path, result_path):
@@ -86,7 +86,7 @@ class EntityDisambiguationGraph(object):
         self.beta1 = 0.5
         self.alpha2 = 0.5
         self.beta2 = 0.5
-        self.bonus = 100
+        self.bonus = 0.0
         print 'Table ' + str(table_number)
 
     # 获取当前表格中一个 mention 的上下文，该 mention 位于第r行第c列，r与c都从0开始
@@ -125,11 +125,13 @@ class EntityDisambiguationGraph(object):
 
             if e == subject:
                 object = object.decode('utf8')
-                entity_context.append(object)
+                seg_list = jieba.lcut(object)  # unicode
+                entity_context.extend(seg_list)
 
             if e == object:
                 subject = subject.decode('utf8')
-                entity_context.append(subject)
+                seg_list = jieba.lcut(subject)  # unicode
+                entity_context.extend(seg_list)
 
         # 从 abstracts 中找实体的上下文
         if kb == 'baidubaike':
@@ -164,6 +166,39 @@ class EntityDisambiguationGraph(object):
         entity_context.extend(seg_list)
 
         return entity_context   # unicode
+
+    # 获取实体字符串的消岐义内容
+    # entity: entity 字符串
+    # kb: entity 来自的知识库
+    def get_entity_disambiguation(self, entity, kb):
+        disambiguation = ''
+
+        # baidubaike
+        if kb == 'baidubaike':  # 完整的实体 entity，包括消岐义内容 real_entity[disambiguation]
+            split = entity.split('[')
+            if len(split) == 2:
+                disambiguation = split[1]
+                disambiguation = disambiguation[:-1]
+
+        if kb == 'hudongbaike':  # 完整的实体 entity，包括消岐义内容 real_entity [disambiguation] or real_entity[disambiguation]
+            split = entity.split(' [')
+
+            if len(split) == 1:
+                newsplit = entity.split('[')
+                if len(newsplit) == 2:
+                    disambiguation = newsplit[1]
+                    disambiguation = disambiguation[:-1]
+            else:
+                disambiguation = split[1]
+                disambiguation = disambiguation[:-1]
+
+        if kb == 'zhwiki':  # 完整的实体 entity，包括消岐义内容 real_entity (disambiguation)
+            split = entity.split(' (')
+            if len(split) == 2:
+                disambiguation = split[1]
+                disambiguation = disambiguation[:-1]
+
+        return disambiguation
 
     # 判断分别来自 kb1 和 kb2 的 e1 与 e2 是否存在 sameAs 关系
     def isSameAs(self, e1, kb1, e2, kb2):
@@ -366,23 +401,24 @@ class EntityDisambiguationGraph(object):
 
                         list.append(set)
 
-                    newlist = []    # [[{'entity': entity1, 'kb': kb1, 'context': [entity1 context]}, {'entity': entity2, 'kb': kb2, 'context': [entity2 context]}], [{'entity': entity3, 'kb': kb3, 'context': [entity3 context]}]]
+                    newlist = []    # [[{'entity': entity1, 'kb': kb1, 'context': [entity1 context], 'disambiguation': d}, {'entity': entity2, 'kb': kb2, 'context': [entity2 context], 'disambiguation': d}], [{'entity': entity3, 'kb': kb3, 'context': [entity3 context], 'disambiguation': d}]]
                     # rebuild entitySet
                     # list: [[(entity1, kb1), (entity2, kb2)], [(entity3, kb3)]]
                     # entitySet: [(entity1, kb1), (entity2, kb2)]
                     for entitySet in list:
-                        set = []    # [{'entity': entity1, 'kb': kb1, 'context': [entity1 context]}, {'entity': entity2, 'kb': kb2, 'context': [entity2 context]}]
+                        set = []    # [{'entity': entity1, 'kb': kb1, 'context': [entity1 context], 'disambiguation': d}, {'entity': entity2, 'kb': kb2, 'context': [entity2 context], 'disambiguation': d}]
                         for tuple in entitySet:
-                            dict = {}       # {'entity': entity1, 'kb': kb1, 'context': [entity context]}
+                            dict = {}       # {'entity': entity1, 'kb': kb1, 'context': [entity context], 'disambiguation': d}
                             dict['entity'] = tuple[0]
                             dict['kb'] = tuple[1]
                             dict['context'] = self.get_entity_context(tuple[0], tuple[1])
+                            dict['disambiguation'] = self.get_entity_disambiguation(tuple[0], tuple[1])
                             set.append(dict)
                         newlist.append(set)
 
                     # 在 EDG 中添加 entitySet node
                     # mNode_index: entitySet node 相邻的唯一一个 mention node 的编号
-                    # entitySet: [{'entity': entity1, 'kb': kb1, 'context': [entity1 context]}, {'entity': entity2, 'kb': kb2, 'context': [entity2 context]}]
+                    # entitySet: [{'entity': entity1, 'kb': kb1, 'context': [entity1 context], 'disambiguation': d}, {'entity': entity2, 'kb': kb2, 'context': [entity2 context]}, 'disambiguation': d]
                     for entitySet in newlist:
                         EDG.add_node(entitySet_counter, type='esNode', entitySet=entitySet, mNode_index=mention_counter, probability=float(0))
 
@@ -458,9 +494,15 @@ class EntityDisambiguationGraph(object):
                 split = entity.split('[')
                 real_entity = split[0]                  # 真实的实体 (unicode)，去除了消岐义内容 real_entity
 
-            if kb == 'hudongbaike':                     # 完整的实体，包括消岐义内容 real_entity [disambiguation]
+            if kb == 'hudongbaike':                     # 完整的实体，包括消岐义内容 real_entity [disambiguation] or real_entity[disambiguation]
                 split = entity.split(' [')
-                real_entity = split[0]                  # 真实的实体 (unicode)，去除了消岐义内容 real_entity
+
+                if len(split) == 1:
+                    entity = split[0]
+                    newsplit = entity.split('[')
+                    real_entity = newsplit[0]           # 真实的实体 (unicode)，去除了消岐义内容 real_entity
+                else:
+                    real_entity = split[0]              # 真实的实体 (unicode)，去除了消岐义内容 real_entity
 
             if kb == 'zhwiki':                          # 完整的实体，包括消岐义内容 real_entity (disambiguation)
                 split = entity.split(' (')
@@ -739,6 +781,69 @@ class EntityDisambiguationGraph(object):
         if flag_convergence == False:
             print 'After Epoch ' + str(iterations) + ' Iterative Probability Propagation is Done!'
 
+        self.r = r
+        self.EDG = EDG
+
+    # 给 mention 的候选实体集合排名
+    def rank_candidates(self):
+        print 'Ranking entitySets......',
+        EDG = self.EDG
+        r = self.r
+
+        for i in range(self.mention_node_begin, self.mention_node_end + 1):
+            if EDG.node[i]['NIL'] == True:
+                continue
+
+            mention = EDG.node[i]['mention']
+            mention_context = EDG.node[i]['context']
+            candidates = EDG.neighbors(i)
+            ranking = []
+
+            self.bonus = 0.0
+            for e in candidates:
+                self.bonus += r[e]
+            self.bonus /= len(candidates)
+
+            # entitySet: [{'entity': entity1, 'kb': kb1, 'context': [entity1 context], 'disambiguation': d}, {'entity': entity2, 'kb': kb2, 'context': [entity2 context]}, 'disambiguation': d]
+            for e in candidates:
+                probability = r[e]
+                entitySet = EDG.node[e]['entitySet']
+
+                for dict in entitySet:
+                    entity = dict['entity']
+                    disambiguation = dict['disambiguation']
+
+                    if entity == mention:
+                        probability += self.bonus               # 候选实体与 mention 完全相同，奖励该候选实体集合
+
+                    for c in mention_context:
+                        if c in disambiguation:
+                            probability += 2 * self.bonus       # mention 的上下文中元素出现在候选实体的消岐义内容中，奖励该候选实体集合
+
+                r[e] = probability
+                tuple = (e, probability)    # (实体集合节点编号，实体集合成为 mention 的对应实体集合的概率)
+                ranking.append(tuple)
+
+            # 将实体结果的概率归一化
+            max = 0.0
+            for e in candidates:
+                if r[e] > max:
+                    max = r[e]
+
+            for e in candidates:
+                r[e] /= max
+
+            newranking = []
+            for t in ranking:
+                t = list(t)
+                e = t[0]
+                p = t[1] / max
+                tuple = (e, p)
+                newranking.append(tuple)
+
+            newranking.sort(key=lambda x: x[1], reverse=True)  # newranking 根据概率逆序排序，下标越小概率越大
+            EDG.node[i]['ranking'] = newranking
+
         # 计算 esNode 上的概率 并 打上标签
         for p in range(self.entitySet_node_begin, self.entitySet_node_end + 1):
             EDG.node[p]['probability'] = r[p]
@@ -754,39 +859,8 @@ class EntityDisambiguationGraph(object):
 
             self.miniEDG.node[p]['label'] += '\n' + str(EDG.node[p]['probability'])
 
+        self.EDG = EDG
         self.r = r
-        self.EDG = EDG
-
-    # 给 mention 的候选实体集合排名
-    def rank_candidates(self):
-        print 'Ranking entitySets......',
-        EDG = self.EDG
-        r = self.r
-
-        for i in range(self.mention_node_begin, self.mention_node_end + 1):
-            if EDG.node[i]['NIL'] == True:
-                continue
-
-            mention = EDG.node[i]['mention']
-            candidates = EDG.neighbors(i)
-            ranking = []
-
-            for e in candidates:
-                probability = r[e]
-                entitySet = EDG.node[e]['entitySet']
-
-                for dict in entitySet:
-                    entity = dict['entity']
-                    if entity == mention:
-                        probability += 0.1
-
-                tuple = (e, probability)    # (实体集合节点编号，实体集合成为 mention 的对应实体集合的概率)
-                ranking.append(tuple)
-
-            ranking.sort(key=lambda x: x[1], reverse=True)  # ranking 根据概率逆序排序，下标越小概率越大
-            EDG.node[i]['ranking'] = ranking
-
-        self.EDG = EDG
         print 'Done!'
 
     # 挑选出 mention 的候选实体中概率最高的一个 entitySet

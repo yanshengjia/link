@@ -27,19 +27,19 @@ class Table(object):
         mention_quantity = (self.row_num - 1) * self.col_num
         return mention_quantity
 
-    # 获取表格中位于 (r, c) 处的单元格的同行同列的所有单元格值
+    # 获取表格中位于 (r, c) 处的单元格的同行同列的所有单元格值，包括表头
     def get_mention_context(self, r, c):
         mention_context = []
 
         for i in range(self.row_num):
             if i == r:
                 continue
-            mention_context.append(self.get_cell(i, c))
+            mention_context.append(self.get_cell(i, c))     # unicode
 
         for j in range(self.col_num):
             if j == c:
                 continue
-            mention_context.append(self.get_cell(r, j))
+            mention_context.append(self.get_cell(r, j))     # unicode
 
         return mention_context
 

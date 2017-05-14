@@ -206,9 +206,9 @@ def mark():
 def result():
     table_path = '../../../data/table/table.xls'
     multiple_kb_el_result_path = '../../../data/final/fusion/multiple_kb_el_result.txt'
-    baidubaike_human_mark_entity_path = '../../../data/mark/baidubaike_human_mark.txt'
-    hudongbaike_human_mark_entity_path = '../../../data/mark/hudongbaike_human_mark.txt'
-    zhwiki_human_mark_entity_path = '../../../data/mark/zhwiki_human_mark.txt'
+    baidubaike_human_mark_entity_path = '../../../data/mark/baidubaike/baidubaike_human_mark.txt'
+    hudongbaike_human_mark_entity_path = '../../../data/mark/hudongbaike/hudongbaike_human_mark.txt'
+    zhwiki_human_mark_entity_path = '../../../data/mark/zhwiki/zhwiki_human_mark.txt'
 
     comparer = Result(table_path, multiple_kb_el_result_path, baidubaike_human_mark_entity_path, hudongbaike_human_mark_entity_path, zhwiki_human_mark_entity_path)
 
@@ -222,11 +222,11 @@ def main():
     print "Version 2.1"
     print "Copyright @2017/3/1 Shengjia Yan. All Rights Reserved."
 
-    mark()
+    # mark()
     # preprocess()
     # candidate_generation()
-    # entity_disambiguation()
-    # result()
+    entity_disambiguation()
+    result()
 
 if __name__ == "__main__":
     main()
