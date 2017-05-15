@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: seuthesis.bst
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: seuthesis.bib
+You can't pop an empty literal stack for entry berners2001
+while executing---line 3540 of file seuthesis.bst
+You can't pop an empty literal stack for entry berners2001
+while executing---line 3540 of file seuthesis.bst
+You've used 11 entries,
+            6690 wiz_defined-function locations,
+            1253 strings with 10191 characters,
+and the built_in function-call counts, 4138 in all, are:
+= -- 381
+> -- 158
+< -- 1
++ -- 85
+- -- 37
+* -- 282
+:= -- 586
+add.period$ -- 41
+call.type$ -- 11
+change.case$ -- 11
+chr.to.int$ -- 11
+cite$ -- 11
+duplicate$ -- 173
+empty$ -- 472
+format.name$ -- 58
+if$ -- 957
+int.to.chr$ -- 1
+int.to.str$ -- 12
+missing$ -- 11
+newline$ -- 71
+num.names$ -- 22
+pop$ -- 101
+preamble$ -- 1
+purify$ -- 11
+quote$ -- 0
+skip$ -- 139
+stack$ -- 0
+substring$ -- 259
+swap$ -- 11
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 0
+while$ -- 29
+width$ -- 0
+write$ -- 151
+(There were 2 error messages)

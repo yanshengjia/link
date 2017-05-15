@@ -1,0 +1,73 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Limaye et al.(2010)]{limaye2010annotating}
+Limaye G, Sarawagi S, Chakrabarti S.
+\newblock Annotating and searching web tables using entities, types and
+  relationships[J].
+\newblock PVLDB, 2010, 3(1-2):1338--1347.
+
+\bibitem[Suchanek et al.(2007)]{suchanek2007yago}
+Suchanek F~M, Kasneci G, Weikum G.
+\newblock Yago: a core of semantic knowledge[C].
+\newblock In: WWW.
+\newblock 2007. 697--706.
+
+\bibitem[Auer et al.(2007)]{auer2007dbpedia}
+Auer S, Bizer C, Kobilarov G, et al.
+\newblock Dbpedia: A nucleus for a web of open data[C].
+\newblock In: ISWC.
+\newblock 2007. 722--735.
+
+\bibitem[Bollacker et al.(2008)]{bollacker2008freebase}
+Bollacker K, Evans C, Paritosh P, et al.
+\newblock Freebase: a collaboratively created graph database for structuring
+  human knowledge[C].
+\newblock In: SIGMOD.
+\newblock 2008. 1247--1250.
+
+\bibitem[Niu et al.(2011)]{niu2011zhishi}
+Niu X, Sun X, Wang H, et al.
+\newblock Zhishi. me-weaving chinese linking open data[C].
+\newblock In: ISWC.
+\newblock 2011. 205--220.
+
+\bibitem[T.~Berners-Lee(2001)]{berners2001}
+T.~Berners-Lee O~L, J.~Hendler.
+\newblock The semantic web[J].
+\newblock Scientific American, 2001.
+
+\bibitem[Hignette et al.(2009)]{hignette2009fuzzy}
+Hignette G, Buche P, Dibie-Barth{\'e}lemy J, et al.
+\newblock Fuzzy annotation of web data tables driven by a domain ontology[C].
+\newblock In: ESWC.
+\newblock 2009. 638--653.
+
+\bibitem[Mulwad et al.(2013)]{mulwad2013semantic}
+Mulwad V, Finin T, Joshi A.
+\newblock Semantic message passing for generating linked data from tables[C].
+\newblock In: ISWC.
+\newblock 2013. 363--378.
+
+\bibitem[Mu{\~n}oz et al.(2014)]{munoz2014using}
+Mu{\~n}oz E, Hogan A, Mileo A.
+\newblock Using linked data to mine RDF from wikipedia's tables[C].
+\newblock In: WSDM.
+\newblock 2014. 533--542.
+
+\bibitem[Syed et al.(2010)]{syed2010exploiting}
+Syed Z, Finin T, Mulwad V, et al.
+\newblock Exploiting a web of semantic data for interpreting tables[C].
+\newblock In: WebSci.
+\newblock 2010. 5.
+
+\bibitem[Venetis et al.(2011)]{venetis2011recovering}
+Venetis P, Halevy A, Madhavan J, et al.
+\newblock Recovering semantics of tables on the web[J].
+\newblock PVLDB, 2011, 4(9):528--538.
+
+\end{thebibliography}
