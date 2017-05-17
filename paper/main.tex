@@ -3,7 +3,8 @@
 % \documentclass[master]{seuthesis} % 硕士
 % \documentclass[doctor]{seuthesis} % 博士
 % \documentclass[engineering]{seuthesis} % 工程硕士
-\usepackage{CJK,CJKnumb}
+\usepackage{CJK}
+\usepackage{CJKnumb}
 \usepackage{hyperref}
 
 
@@ -33,27 +34,46 @@
 \begin{abstract}{实体链接，Web表格，多知识库}
 在当今的万维网上包含着超大规模的蕴含丰富价值的关系型数据，而这些关系型数据大多以 HTML 表格 (也就是 Web 表格) 的形式呈现。
 抽取 Web 表格中的语义来制造机器可以理解的知识如今已经成为了一个热门的研究领域。
-从 Web 表格中抽取出丰富且高质量的语义信息是一个充满挑战和价值的任务，其中关键一步就是实体链接 (Entity Linking)，其目的在于建立表格中的字符串指称 (Mention) 到知识库中的相应实体 (Entity) 的链接。\par
+从 Web 表格中抽取出丰富且高质量的语义信息是一个充满挑战和价值的任务，其中关键一步就是实体链接 (Entity Linking)，其目的在于建立表格中的字符串指称 (Mention) 到知识库中的相应的参考实体 (Entity) 的链接。\par
 
-目前大部分的实体链接都是使用单个特定的跨领域知识库来作为实体数据的来源。但由于单个知识库中的实体数量有限且对实体的覆盖范围不广，从而导致单知识库实体链接中实体缺失和链接错误的问题常有发生。
-在本文中，我会介绍我的本科毕业设计``基于多知识库的表格实体链接系统''的设计思路和具体实现，这个系统中包含了2种表格实体链接的新方法。与先前的工作不同的是，我的方法使用多知识库而不是单知识库作为实体数据的来源，来提升表格实体链接的质量。\par
+目前大部分的实体链接都是使用单个特定的跨领域知识库来作为实体数据的来源。
+但由于单个知识库中的实体数量有限且对实体的覆盖范围不广，从而导致单知识库实体链接中实体缺失和链接错误的问题常有发生。
+在本文中，我会介绍我的本科毕业设计``基于多知识库的表格实体链接系统''的设计思路和具体实现。
+这个系统中包含了2种通用的表格实体链接的新方法。与先前的工作不同的是，这2个方法都使用多知识库而不是单知识库作为实体数据的来源，来提升表格实体链接的质量。\par
 
-方法一是一个``两步走''的方法，我首先将一个基于通用的概率图模型的随机游走算法应用于单知识库的表格实体链接，然后使用多知识库间已有的和新学习到的``sameAs''关系来提升前一步中实体链接结果的质量。
-方法二融合了方法一中的两步，我修改了方法一中概率图模型中的节点定义，直接将多知识库间已有的和新学习到的``sameAs''关系融合进了概率图模型，从而实现了一步到位的效果。\par
+方法一是一个``两步走''的方法，首先将一个基于概率图模型的随机游走算法应用于单知识库的表格实体链接，然后使用多知识库间已有的和新学习到的``sameAs''关系来提升前一步中实体链接结果的质量。
+方法二融合了方法一中的两步，修改了方法一中概率图模型中的节点定义，直接将多知识库间已有的和新学习到的``sameAs''关系融合进了概率图模型，从而实现了一步到位的效果。\par
 
-本文中的所有实验都是在基于 Zhishi.me 人工标注的 Web 表格上进行的，Zhishi.me 涵盖了三个最大的中文百科知识库：百度百科，互动百科和中文维基百科。实验结果表明我的方法在一些评估指标上胜过当今最好的表格实体链接方法。
-除此之外，系统在实体消岐时引入了更多的有效的特征，还增加了一些有意义的功能，比如实体链接和``sameAs''关系的迭代学习，在表格实体链接完成之后进行表格的关系抽取。
+我设计了一些对比实验来比较本文提出的2个方法与目前最先进的实体链接系统 (TabEL, LIEGE) 的效果差异。
+所有实验都是在基于 Zhishi.me 人工标注的 Web 表格上进行的，Zhishi.me 涵盖了三个最大的中文百科知识库：百度百科，互动百科和中文维基百科。
+实验表明，文中提出的2个方法在准确率、召回率、F1 值等评价指标上表现得都很不错。
+除此之外，系统在实体消岐时引入了更多的有效的特征，还增加了一些有意义的功能，比如实体链接和``sameAs''关系的迭代学习。
+实验中用到的已人工标注实体的表格语料库和整个系统的代码都是开放的，供未来的研究工作使用。
 \end{abstract}
 
 % 英文摘要
 \begin{englishabstract}{Entity Linking, Web Tables, Multiple Linked Knowledge Bases}
-The World-Wide Web contains a huge scale of valuable relational data, which are embedded in HTML tables (i.e. Web tables). It's a challenging and valuable task that extracting abundant and high-quality semantics of Web tables is. A key step in extracting the semantics of Web tables is Entity Linking (EL), which aims to map the string mentions in table cells to their referent entities in a Knowledge Base (KB).\par
+The World-Wide Web contains a huge scale of valuable relational data, which are embedded in HTML tables (i.e. Web tables).
+It's a challenging and valuable task that extracting abundant and high-quality semantics of Web tables is.
+A key step in extracting the semantics of Web tables is Entity Linking (EL), which aims to map the string mentions in table cells to their referent entities in a Knowledge Base (KB).\par
 
-At present most entity linking researches use single cross-domain KBs as source of entities. However, the quantity of entities and the coverage in a single KB is limited. Thus, the issues of entity absence and linking error often appear in the process of EL in a single KB. In this paper, I will introduce the design ideas and concrete implementations of my undergraduate graduate project ``Entity Linking System in Web Tables with Multiple Linked Knowledge Bases'', which includes two new approaches for EL in Web tables. Different from previous work, the proposed approaches replace a single KB with multiple linked KBs as the sources of entities to improve the quality of EL.
+At present most entity linking researches use single cross-domain KBs as source of entities.
+However, the quantity of entities and the coverage in a single KB is limited.
+Thus, the issues of entity absence and linking error often appear in the process of EL in a single KB.
+In this paper, I will introduce the design ideas and concrete implementations of my undergraduate graduate project ``Entity Linking System in Web Tables with Multiple Linked Knowledge Bases'', which includes two new approaches for EL in Web tables.
+Different from previous work, the proposed approaches replace a single KB with multiple linked KBs as the sources of entities to improve the quality of EL.
 
-Approach One is a two-step method. I first apply a random walk algorithm based on a general probabilistic graphical model to EL in Web tables with each single KB. Then, I leverage the existing and newly learned ``sameAs'' relations between the entities from different KBs to help improve the results of EL in the first step. Approach Two merges two steps from Approach One. I modify node definitions in the probabilistic graphical model in Approach One and directly add the ``sameAs'' relations between the entities from different KBs into the model.\par
+Approach One is a two-step method.
+I first apply a random walk algorithm based on a general probabilistic graphical model to EL in Web tables with each single KB.
+Then, I leverage the existing and newly learned ``sameAs'' relations between the entities from different KBs to help improve the results of EL in the first step.
+Approach Two merges two steps from Approach One.
+I modify node definitions in the probabilistic graphical model in Approach One and directly add the ``sameAs'' relations between the entities from different KBs into the model.\par
 
-All experiments are conducted on the sampled Web tables with Zhishi.me, which consists of three biggest linked Chinese encyclopedic KBs: Baidubaike, Hudongbaike and Zhwiki. The experimental results show that my approaches outperform the state-of-the-art table's EL methods in different evaluation metrics. Besides, the system adds some meaningful functions, such as iterative learning between EL and ``sameAs'' relations and table's relation extraction after EL in Web tables is accomplished.
+Some comparison experiments are designed to compare the effect of my system proposed in this paper with the state-of-the-art table’s EL systems (TabEL, LIEGE).
+All experiments are conducted on the sampled Web tables with Zhishi.me, which consists of three biggest linked Chinese encyclopedic KBs: Baidubaike, Hudongbaike and Zhwiki.
+The experimental results show that my approaches have a good performence in different evaluation metrics, such as precision, recall and F1 value.
+Besides, the system adds some meaningful functions, such as iterative learning between EL and ``sameAs'' relations.
+I also make my manually annotated table corpus and the code of the entire system publicly available for future work.
 \end{englishabstract}
 
 % 目录

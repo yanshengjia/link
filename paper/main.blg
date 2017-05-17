@@ -5,49 +5,61 @@ The style file: seuthesis.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: seuthesis.bib
+Too many commas in name 1 of "W. Shen, J. Wang, P. Luo, M. Wang" for entry shen2012ontology
+while executing---line 3458 of file seuthesis.bst
+Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
+while executing---line 3458 of file seuthesis.bst
+Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
+while executing---line 3458 of file seuthesis.bst
 You can't pop an empty literal stack for entry berners2001
 while executing---line 3540 of file seuthesis.bst
 You can't pop an empty literal stack for entry berners2001
 while executing---line 3540 of file seuthesis.bst
-You've used 11 entries,
+Too many commas in name 1 of "W. Shen, J. Wang, P. Luo, M. Wang" for entry shen2012ontology
+while executing---line 3540 of file seuthesis.bst
+Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
+while executing---line 3540 of file seuthesis.bst
+Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
+while executing---line 3540 of file seuthesis.bst
+You've used 23 entries,
             6690 wiz_defined-function locations,
-            1253 strings with 10191 characters,
-and the built_in function-call counts, 4138 in all, are:
-= -- 381
-> -- 158
-< -- 1
-+ -- 85
-- -- 37
-* -- 282
-:= -- 586
-add.period$ -- 41
-call.type$ -- 11
-change.case$ -- 11
-chr.to.int$ -- 11
-cite$ -- 11
-duplicate$ -- 173
-empty$ -- 472
-format.name$ -- 58
-if$ -- 957
-int.to.chr$ -- 1
-int.to.str$ -- 12
-missing$ -- 11
-newline$ -- 71
-num.names$ -- 22
-pop$ -- 101
+            1308 strings with 11637 characters,
+and the built_in function-call counts, 8311 in all, are:
+= -- 776
+> -- 246
+< -- 10
++ -- 141
+- -- 58
+* -- 555
+:= -- 1157
+add.period$ -- 88
+call.type$ -- 23
+change.case$ -- 23
+chr.to.int$ -- 21
+cite$ -- 23
+duplicate$ -- 356
+empty$ -- 1010
+format.name$ -- 97
+if$ -- 1950
+int.to.chr$ -- 3
+int.to.str$ -- 24
+missing$ -- 23
+newline$ -- 142
+num.names$ -- 46
+pop$ -- 194
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 23
 quote$ -- 0
-skip$ -- 139
+skip$ -- 254
 stack$ -- 0
-substring$ -- 259
-swap$ -- 11
+substring$ -- 580
+swap$ -- 27
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 92
 warning$ -- 0
-while$ -- 29
+while$ -- 61
 width$ -- 0
-write$ -- 151
-(There were 2 error messages)
+write$ -- 307
+(There were 8 error messages)

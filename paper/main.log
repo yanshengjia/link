@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.6.30)  15 MAY 2017 01:54
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.6.30)  17 MAY 2017 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1542,35 +1542,35 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 11.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 12.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 12.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box82
-Package hyperref Info: Link coloring ON on input line 11.
+Package hyperref Info: Link coloring ON on input line 12.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1580,9 +1580,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count170
 )
-LaTeX Info: Redefining \ref on input line 11.
-LaTeX Info: Redefining \pageref on input line 11.
-LaTeX Info: Redefining \nameref on input line 11.
+LaTeX Info: Redefining \ref on input line 12.
+LaTeX Info: Redefining \pageref on input line 12.
+LaTeX Info: Redefining \nameref on input line 12.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -1638,7 +1638,7 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 30.
+(hyperref)                removing `\@ifnextchar' on input line 31.
 
 File: figures/seu-badge-logo.eps Graphic file (type eps)
 <figures/seu-badge-logo.eps>
@@ -1740,37 +1740,37 @@ slant=0.167;"
 . and font adjustment code:
 . 
 .................................................
-LaTeX Font Info:    Calculating math sizes for size <28> on input line 30.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 30.
+LaTeX Font Info:    Calculating math sizes for size <28> on input line 31.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 31.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 30.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 31.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 30.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 31.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <28> on input line 30.
+(Font)              <28> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <19.59991> on input line 30.
+(Font)              <19.59991> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 30.
-LaTeX Font Info:    Calculating math sizes for size <15.75> on input line 30.
+(Font)              <14> on input line 31.
+LaTeX Font Info:    Calculating math sizes for size <15.75> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <15.75> on input line 30.
+(Font)              <15.75> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11.02495> on input line 30.
+(Font)              <11.02495> on input line 31.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.875> on input line 30.
+(Font)              <7.875> on input line 31.
 
 *************************************************
 * xeCJK warning: "CJKfamily-Unknown"
@@ -1780,12 +1780,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 * Try to use `\setCJKsansfont[...]{...}' to define it.
 *************************************************
 
-Overfull \hbox (2.625pt too wide) detected at line 30
+Overfull \hbox (2.625pt too wide) detected at line 31
  []
  []
 
 
-Overfull \hbox (2.625pt too wide) detected at line 30
+Overfull \hbox (2.625pt too wide) detected at line 31
  []
  []
 
@@ -1809,82 +1809,136 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 1.
-)
+ [5
+
+])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5
-
-] [6
-
-
-
-] (./introduction.tex
+ [6] (./introduction.tex
 第\CJKnumber {1}章 1.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
-])
-(./preliminary.tex
+
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-[3] [4
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 78.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 78.
 
-]
+*************************************************
+* xeCJK warning: "CJKfamily-Unknown"
+* 
+* Unknown CJK family `\CJKttdefault' is being ignored.
+* 
+* Try to use `\setCJKmonofont[...]{...}' to define it.
+*************************************************
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 78.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmtt.fd
+File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+File: img/zhishime_link.png Graphic file (type QTm)
+
+<use  "img/zhishime_link.png" > [3]) (./preliminary.tex [4]
 第\CJKnumber {2}章 2.
-) (./systemdescription.tex [5] [6
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--21
+
+ []
+
+File: img/movie.png Graphic file (type QTm)
+<use  "img/movie.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 33--39
+
+ []
+
+[5
+
+] [6] [7]
+File: img/flow.png Graphic file (type QTm)
+ <use  "img/flow.png" >) (./systemdescription.tex [8]
+第\CJKnumber {3}章 3.
+File: img/relate.png Graphic file (type QTm)
+<use  "img/relate.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 41--47
+
+ []
+
+
+Underfull \vbox (badness 4779) has occurred while \output is active []
+
+ [9
 
 ]
-第\CJKnumber {3}章 3.
-) (./implementation.tex [7] [8
+Underfull \hbox (badness 10000) in paragraph at lines 49--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+File: img/zhishime_data.png Graphic file (type QTm)
+<use  "img/zhishime_data.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10])
+(./implementation.tex [11] [12
 
 ]
 第\CJKnumber {4}章 4.
-) (./experiments.tex [9] [10
+) (./experiments.tex [13] [14
 
 ]
 第\CJKnumber {5}章 5.
-) (./conclusionfuturework.tex [11] [12
+) (./conclusionfuturework.tex [15] [16
 
 ]
 第\CJKnumber {6}章 6.
-) [13] [14
+) [17] [18
 
 
-] (./main.bbl [15
+] (./main.bbl [19
 
 
-] [16
+] [20
 
-]) [17] [18
-
-
-]
+] [21]) [22]
 附录 A A.
-[19] (./main.ind) [20
+[23
+
+
+] (./main.ind) [24
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
- [21
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
+ [25
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 103.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 103.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 123.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 123.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
  ) 
 Here is how much of TeX's memory you used:
- 29683 strings out of 493706
- 568676 string characters out of 6145769
+ 29840 strings out of 493706
+ 572637 string characters out of 6145769
  691470 words of memory out of 5000000
- 32703 multiletter control sequences out of 15000+600000
- 40433 words of font info for 92 fonts, out of 8000000 for 9000
+ 32836 multiletter control sequences out of 15000+600000
+ 47644 words of font info for 101 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 73i,11n,71p,10448b,726s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,11n,71p,10440b,782s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (29 pages).
+Output written on main.pdf (33 pages).

@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -69,5 +69,79 @@ Syed Z, Finin T, Mulwad V, et al.
 Venetis P, Halevy A, Madhavan J, et al.
 \newblock Recovering semantics of tables on the web[J].
 \newblock PVLDB, 2011, 4(9):528--538.
+
+\bibitem[Cafarella et al.(2008)]{cafarella2008webtables}
+Cafarella M~J, Halevy A, Wang D~Z, et al.
+\newblock Webtables: exploring the power of tables on the web[J].
+\newblock PVLDB, 2008, 1(1):538--549.
+
+\bibitem[Zhang(2014){\natexlab{a}}]{zhang2014towards}
+Zhang Z.
+\newblock Towards efficient and effective semantic table interpretation[C].
+\newblock In: ISWC.
+\newblock 2014. 487--502.
+
+\bibitem[Zhang(2014){\natexlab{b}}]{zhang2014learning}
+Zhang Z.
+\newblock Learning with partial data for semantic table interpretation[C].
+\newblock In: EKAW.
+\newblock 2014. 607--618.
+
+\bibitem[Bhagavatula et al.(2015)]{bhagavatula2015tabel}
+Bhagavatula C~S, Noraset T, Downey D.
+\newblock TabEL: Entity Linking in Web Tables[C].
+\newblock In: ISWC.
+\newblock 2015. 425--441.
+
+\bibitem[Shen et al.(2012)]{shen2012liege}
+Shen W, Wang J, Luo P, et al.
+\newblock LIEGE:: link entities in web lists with knowledge base[C].
+\newblock In: SIGKDD.
+\newblock 2012. 1424--1432.
+
+\bibitem[Pereira(2014)]{pereira2014entity}
+Pereira B.
+\newblock Entity linking with multiple knowledge bases: An ontology
+  modularization approach[C].
+\newblock In: ISWC.
+\newblock 2014. 513--520.
+
+\bibitem[T.~Zhang(2013){\natexlab{a}}]{zhang2013cross}
+T.~Zhang J~Z, K.~Liu.
+\newblock Wu C, Wang H, Qu J, Yu Y[C].
+\newblock In: IJCAI.
+\newblock 2013. 2218–--2224.
+
+\bibitem[W.~Shen(2012)]{shen2012ontology}
+W.~Shen P~L~M~W, J.~Wang.
+\newblock A graph-based approach for ontology population with named
+  entities[C].
+\newblock In: CIKM.
+\newblock 2012. 345–--354.
+
+\bibitem[X.~Ling(2012)]{ling2012}
+X.~Ling D~S~W.
+\newblock Fine-grained entity recognition[C].
+\newblock In: AAAI.
+\newblock 2012.
+
+\bibitem[T.~Zhang(2013){\natexlab{b}}]{zhang2013zhishilink}
+T.~Zhang J~Z, K.~Liu.
+\newblock ZhishiLink: Entity Linking on Zhishi.me[C].
+\newblock In: Proceedings of the 7th CSWS.
+\newblock 2013. 161--174.
+
+\bibitem[Dredze~M(2010)]{dredze2010entity}
+Dredze~M R~D~G~A~F~T, McNamee~P.
+\newblock Entity Disambiguation for Knowledge Base Population[C].
+\newblock In: Proceedings of the 23rd International Conference on Computational
+  Linguistics.
+\newblock 2010. 277--285.
+
+\bibitem[Navigli and Ponzetto(2010)]{navigli2010babelnet}
+Navigli R, Ponzetto S~P.
+\newblock BabelNet: Building a very large multilingual semantic network[C].
+\newblock In: ACL.
+\newblock 2010. 216--225.
 
 \end{thebibliography}
