@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.6.30)  17 MAY 2017 17:29
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.6.30)  22 MAY 2017 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1146,7 +1146,7 @@ File: xeCJK.cfg 2015/05/15 v3.3.2 Configuration file for xeCJK package
 Package: ulem 2012/05/18
 \ULdepth=\dimen187
 )
-Package caption Info: We need package `newfloat' on input line 94.
+Package caption Info: We need package `newfloat' on input line 97.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/caption/newfloat.sty
 Package: newfloat 2013/05/11 v1.1-91 Defining new floating environments (AR)
@@ -1302,7 +1302,7 @@ Class scrbook Warning: Usage of package `titlesec' together
 (scrbook)              the extended optional argument of the section
 (scrbook)              commands.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `titlesec' on input line 109.
+(scrbook)              package `titlesec' on input line 112.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
@@ -1342,21 +1342,21 @@ Package titlesec Warning: Non standard sectioning command detected
 )
 
 Package scrbook Warning: Activating an ugly workaround for a missing
-(scrbook)                feature of package `titlesec` on input line 109.
+(scrbook)                feature of package `titlesec` on input line 112.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2011/12/15 v1.6 TOC entries
 \ttl@leftsep=\dimen205
 )
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 110.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 113.
 
 \g__fontspec_family_simsun.ttf_int=\count165
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'simsun.ttf(0)' created for font 'simsun.ttf' with options
-. [Mapping=tex-text,Script={CJK},Path={./font/},AutoFakeBold={4},AutoFakeSlant=
-{0.167}].
+. [Mapping=tex-text,Script={CJK},Path={./font/},BoldItalicFont={simfang.ttf},Bo
+ldFont={simhei.ttf},ItalicFont={simkai.ttf}].
 . 
 . This font family consists of the following shapes:
 . 
@@ -1369,9 +1369,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 110.
 . 
 . 
 . * 'bold' with NFSS spec.:
-. 
-. <->"[./font/simsun]/OT:script=hani;language=DFLT;mapping=tex-text;embolden=4;
-"
+. <->"[./font/simhei]/OT:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1379,9 +1377,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 110.
 . 
 . 
 . * 'italic' with NFSS spec.:
-. 
-. <->"[./font/simsun]/OT:script=hani;language=DFLT;mapping=tex-text;slant=0.167
-;"
+. <->"[./font/simkai]/OT:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1389,9 +1385,7 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 110.
 . 
 . 
 . * 'bold italic' with NFSS spec.:
-. 
-. <->"[./font/simsun]/OT:script=hani;language=DFLT;mapping=tex-text;embolden=4;
-slant=0.167;"
+. <->"[./font/simfang]/OT:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1446,12 +1440,161 @@ slant=0.167;"
 . and font adjustment code:
 . 
 .................................................
-Package hyperref Info: Option `colorlinks' set `true' on input line 164.
+Package hyperref Info: Option `colorlinks' set `true' on input line 175.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/CJKnumb.sty
 Package: CJKnumb 2015/04/18 4.8.4
 \CJK@q=\count167
 \CJK@r=\count168
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Invalid UTF-8 byte or sequence at line 164 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 414 replaced by U+FFFD.
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count169
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip75
+\skiplinenumber=\skip76
+\skiprule=\skip77
+\skiphlne=\skip78
+\skiptext=\skip79
+\skiplength=\skip80
+\algomargin=\skip81
+\skipalgocfslide=\skip82
+\algowidth=\dimen206
+\inoutsize=\dimen207
+\inoutindent=\dimen208
+\interspacetitleruled=\dimen209
+\interspacealgoruled=\dimen210
+\interspacetitleboxruled=\dimen211
+\algocf@inoutbox=\box77
+\algocf@inputbox=\box78
+\AlCapSkip=\skip83
+\AlCapHSkip=\skip84
+\algoskipindent=\skip85
+\algocf@nlbox=\box79
+\algocf@hangingbox=\box80
+\algocf@untilbox=\box81
+\algocf@skipuntil=\skip86
+\algocf@capbox=\box82
+\algoheightruledefault=\skip87
+\algoheightrule=\skip88
+\algotitleheightruledefault=\skip89
+\algotitleheightrule=\skip90
+\c@algocfline=\count170
+\c@algocfproc=\count171
+\c@algocf=\count172
+\algocf@algoframe=\box83
+\algocf@algobox=\box84
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen212
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip91
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks26
+\ex@=\dimen213
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+LaTeX Info: Redefining \boldsymbol on input line 39.
+\pmbraise@=\dimen214
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count173
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count174
+\leftroot@=\count175
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count176
+\DOTSCASE@=\count177
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box85
+\strutbox@=\box86
+\big@size=\dimen215
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count178
+\c@MaxMatrixCols=\count179
+\dotsspace@=\muskip18
+\c@parentequation=\count180
+\dspbrk@lvl=\count181
+\tag@help=\toks27
+\row@=\count182
+\column@=\count183
+\maxfields@=\count184
+\andhelp@=\toks28
+\eqnshift@=\dimen216
+\alignsep@=\dimen217
+\tagshift@=\dimen218
+\tagwidth@=\dimen219
+\totwidth@=\dimen220
+\lineht@=\dimen221
+\@envbody=\toks29
+\multlinegap=\skip92
+\multlinetaggap=\skip93
+\mathdisplay@stack=\toks30
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip94
+\subfigcapskip=\skip95
+\subfigcaptopadj=\dimen222
+\subfigbottomskip=\skip96
+\subfigcapmargin=\dimen223
+\subfiglabelskip=\skip97
+\c@subfigure=\count185
+\c@lofdepth=\count186
+\c@subtable=\count187
+\c@lotdepth=\count188
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip98
+\subfig@bottom=\skip99
 )
 (/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty
 Package: xeCJKfntef 2015/05/15 v3.3.2 xeCJK font effect
@@ -1461,21 +1604,19 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)
-\@envbody=\toks26
-)
+))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty
 Package: CJKfntef 2015/04/18 4.8.4
-\CJK@fntefSkip=\skip75
-\CJK@nest=\count169
-\CJK@fntefDimen=\dimen206
-\CJK@underdotBox=\box77
-\CJK@ULbox=\box78
-\CJK@underanyskip=\dimen207
+\CJK@fntefSkip=\skip100
+\CJK@nest=\count189
+\CJK@fntefDimen=\dimen224
+\CJK@underdotBox=\box87
+\CJK@ULbox=\box88
+\CJK@underanyskip=\dimen225
 )
-\l__xeCJK_space_skip=\skip76
-\c__xeCJK_ulem-left_node_dim=\dimen208
-\c__xeCJK_null_box=\box79
+\l__xeCJK_space_skip=\skip101
+\c__xeCJK_ulem-left_node_dim=\dimen226
+\c__xeCJK_null_box=\box89
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -1516,7 +1657,7 @@ Package: CJKfntef 2015/04/18 4.8.4
 . 
 . Redefining command \CJKunderanyline with sig. 'st-somm' on line 702.
 .................................................
-\l__xeCJK_fntef_box=\box80
+\l__xeCJK_fntef_box=\box90
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
@@ -1527,13 +1668,13 @@ Package: CJKfntef 2015/04/18 4.8.4
 . 
 . Redefining command \CJKunderdot with sig. 'om' on line 883.
 .................................................
-\l__xeCJK_under_symbol_box=\box81
+\l__xeCJK_under_symbol_box=\box91
 .................................................
 . LaTeX info: "xparse/redefine-environment"
 . 
 . Redefining environment 'CJKfilltwosides' with sig. 'O{c}m' on line 977.
 .................................................
-\c__xeCJK_filll_skip=\skip77
+\c__xeCJK_filll_skip=\skip102
 )
 
 LaTeX Warning: Unused global option(s):
@@ -1542,35 +1683,36 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 12.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 17.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box82
-Package hyperref Info: Link coloring ON on input line 12.
+\AtBeginShipoutBox=\box92
+Package hyperref Info: Link coloring ON on input line 17.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1578,11 +1720,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count170
+\c@section@level=\count190
 )
-LaTeX Info: Redefining \ref on input line 12.
-LaTeX Info: Redefining \pageref on input line 12.
-LaTeX Info: Redefining \nameref on input line 12.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -1606,15 +1748,15 @@ Writing index file main.idx
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(71.13188pt, 455.24417pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78317pt, 71.13188pt)
+* h-part:(L,W,R)=(56.9055pt, 483.69693pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23593pt, 56.9055pt)
 * \paperwidth=597.50793pt
 * \paperheight=845.04694pt
-* \textwidth=455.24417pt
-* \textheight=702.78317pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-38.53812pt
+* \textwidth=483.69693pt
+* \textheight=731.23593pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.7645pt
 * \headheight=17.0pt
 * \headsep=20.40001pt
 * \topskip=11.0pt
@@ -1638,13 +1780,11 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 31.
+(hyperref)                removing `\@ifnextchar' on input line 36.
 
-File: figures/seu-badge-logo.eps Graphic file (type eps)
-<figures/seu-badge-logo.eps>
 File: figures/seu-text-logo.eps Graphic file (type eps)
- <figures/seu-text-logo.eps>
-\g__fontspec_family_simhei.ttf_int=\count171
+<figures/seu-text-logo.eps>
+\g__fontspec_family_simhei.ttf_int=\count191
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1692,7 +1832,54 @@ slant=0.167;"
 . and font adjustment code:
 . 
 .................................................
-\g__fontspec_family_simfang.ttf_int=\count172
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'simsun.ttf(1)' created for font 'simsun.ttf' with options
+. [Mapping=tex-text,Script={CJK},Path={./font/},AutoFakeBold={4},AutoFakeSlant=
+{0.167}].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"[./font/simsun]/OT:script=hani;language=DFLT;mapping=tex-text;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold' with NFSS spec.:
+. 
+. <->"[./font/simsun]/OT:script=hani;language=DFLT;mapping=tex-text;embolden=4;
+"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'italic' with NFSS spec.:
+. 
+. <->"[./font/simsun]/OT:script=hani;language=DFLT;mapping=tex-text;slant=0.167
+;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold italic' with NFSS spec.:
+. 
+. <->"[./font/simsun]/OT:script=hani;language=DFLT;mapping=tex-text;embolden=4;
+slant=0.167;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+\g__fontspec_family_simfang.ttf_int=\count192
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1740,37 +1927,47 @@ slant=0.167;"
 . and font adjustment code:
 . 
 .................................................
-LaTeX Font Info:    Calculating math sizes for size <28> on input line 31.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 31.
+LaTeX Font Info:    Calculating math sizes for size <28> on input line 36.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 36.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 31.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 36.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 31.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 36.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <28> on input line 31.
+(Font)              <28> on input line 36.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <19.59991> on input line 31.
+(Font)              <19.59991> on input line 36.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 31.
-LaTeX Font Info:    Calculating math sizes for size <15.75> on input line 31.
+(Font)              <14> on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Calculating math sizes for size <15.75> on input line 36.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <15.75> on input line 31.
+(Font)              <15.75> on input line 36.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11.02495> on input line 31.
+(Font)              <11.02495> on input line 36.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.875> on input line 31.
+(Font)              <7.875> on input line 36.
 
 *************************************************
 * xeCJK warning: "CJKfamily-Unknown"
@@ -1780,12 +1977,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 * Try to use `\setCJKsansfont[...]{...}' to define it.
 *************************************************
 
-Overfull \hbox (2.625pt too wide) detected at line 31
+Overfull \hbox (2.625pt too wide) detected at line 36
  []
  []
 
 
-Overfull \hbox (2.625pt too wide) detected at line 31
+Overfull \hbox (2.625pt too wide) detected at line 36
  []
  []
 
@@ -1855,90 +2052,149 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--21
 
  []
 
-File: img/movie.png Graphic file (type QTm)
-<use  "img/movie.png" >
+File: img/el.png Graphic file (type QTm)
+<use  "img/el.png" >
 Underfull \hbox (badness 10000) in paragraph at lines 33--39
 
  []
 
 [5
 
-] [6] [7]
+] [6]
 File: img/flow.png Graphic file (type QTm)
- <use  "img/flow.png" >) (./systemdescription.tex [8]
+ <use  "img/flow.png" > [7]) (./systemdescription.tex [8]
 第\CJKnumber {3}章 3.
-File: img/relate.png Graphic file (type QTm)
-<use  "img/relate.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 41--47
-
- []
-
-
-Underfull \vbox (badness 4779) has occurred while \output is active []
-
- [9
+File: img/markov_chain.png Graphic file (type QTm)
+<use  "img/markov_chain.png" > [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 49--60
+File: img/random_walk.png Graphic file (type QTm)
+ <use  "img/random_walk.png" >
+File: img/table.png Graphic file (type QTm)
+
+<use  "img/table.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 79--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 87--99
 
  []
 
-File: img/zhishime_data.png Graphic file (type QTm)
-<use  "img/zhishime_data.png" >
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 127--140
+
+ []
+
+File: img/edg.png Graphic file (type QTm)
+<use  "img/edg.png" > [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 199--203
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 232--236
+
+ []
+
+[15]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 284.
+\g__fontspec_family_simkai.ttf_int=\count193
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'simkai.ttf(0)' created for font 'simkai.ttf' with options
+. [Mapping=tex-text,Script={CJK},Path={./font/},AutoFakeBold={4},AutoFakeSlant=
+{0.167}].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"[./font/simkai]/OT:script=hani;language=DFLT;mapping=tex-text;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold' with NFSS spec.:
+. 
+. <->"[./font/simkai]/OT:script=hani;language=DFLT;mapping=tex-text;embolden=4;
+"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'italic' with NFSS spec.:
+. 
+. <->"[./font/simkai]/OT:script=hani;language=DFLT;mapping=tex-text;slant=0.167
+;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold italic' with NFSS spec.:
+. 
+. <->"[./font/simkai]/OT:script=hani;language=DFLT;mapping=tex-text;embolden=4;
+slant=0.167;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
-(./implementation.tex [11] [12
+ [16]
+File: img/sameas.png Graphic file (type QTm)
+
+<use  "img/sameas.png" > [17] [18]
+File: img/edg2.png Graphic file (type QTm)
+ <use  "img/edg2.png" > [19])
+(./implementation.tex [20]
+第\CJKnumber {4}章 4.
+[21
 
 ]
-第\CJKnumber {4}章 4.
-) (./experiments.tex [13] [14
+File: img/zhishime_data.png Graphic file (type QTm)
+ <use  "img/zhishime_data.png" > [22]) (./experiments.tex [23] [24
 
 ]
 第\CJKnumber {5}章 5.
-) (./conclusionfuturework.tex [15] [16
+[25] [26]) (./conclusionfuturework.tex [27] [28
 
 ]
 第\CJKnumber {6}章 6.
-) [17] [18
+) [29] [30
 
 
-] (./main.bbl [19
+] (./main.bbl [31
 
 
-] [20
+] [32
 
-] [21]) [22]
-附录 A A.
-[23
-
-
-] (./main.ind) [24
-
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
- [25
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
+] [33]) [34] (./main.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 123.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 166.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 166.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
  ) 
 Here is how much of TeX's memory you used:
- 29840 strings out of 493706
- 572637 string characters out of 6145769
- 691470 words of memory out of 5000000
- 32836 multiletter control sequences out of 15000+600000
- 47644 words of font info for 101 fonts, out of 8000000 for 9000
+ 32322 strings out of 493706
+ 609133 string characters out of 6145769
+ 752475 words of memory out of 5000000
+ 35240 multiletter control sequences out of 15000+600000
+ 96510 words of font info for 170 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 73i,11n,71p,10440b,782s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,15n,72p,10440b,1102s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (33 pages).
+Output written on main.pdf (42 pages).

@@ -43,6 +43,7 @@
 }
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
 \ProcessOptions
+%\LoadClass[a4paper,captions=tableheading]{scrbook}
 \LoadClass[a4paper,10.5pt,tablecaptionabove]{scrbook}
 \let\todayeng\today
 
@@ -74,6 +75,8 @@
 % my change
 \RequirePackage{ulem}
 
+% 加粗改黑体
+\renewcommand{\textbf}[1]{{\normalfont\bfseries #1}}
 % my change
 %\def\CJK@spaceChar{\hskip \f@size \p@}
 \def\CJKindent{%
@@ -104,12 +107,20 @@
   }
 \AtEndDocument{\backcover}
 
-\RequirePackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\RequirePackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \RequirePackage[pagestyles, rm]{titlesec}
 \RequirePackage{titletoc} % 设置目录
 \hypersetup{bookmarksnumbered=true}%书签中章节编号
 \defaultfontfeatures{Mapping=tex-text} % --- as em-dash
-\setCJKmainfont[Path = ./font/]{simsun.ttf}
+
+
+% 修改中文字体族，增加黑体
+\setCJKmainfont[
+Path = ./font/,
+BoldFont=simhei.ttf,
+ItalicFont=simkai.ttf,
+BoldItalicFont=simfang.ttf
+]{simsun.ttf}
 \setCJKfamilyfont{zhsong}[Path = ./font/]{simsun.ttf}
 \newcommand{\song}{\CJKfamily{zhsong}}
 \setCJKfamilyfont{zhhei}[Path = ./font/]{simhei.ttf}
@@ -172,25 +183,22 @@ BoldItalicFont=timesbi.ttf
   urlcolor=magenta
 }
 \newpagestyle{seustyle}{
-  \sethead[][{\song{}\xiaowuhao{}东南大学\@degree{}学位论文}][] % 偶数页
-  {}{{\song{}\xiaowuhao{}\chaptertitlename\quad\chaptertitle}}{} % 奇数页
-  \setfoot{}{\thepage}{}
+  \sethead[][{\song{}\xiaowuhao{}东南大学2017届本科生毕业设计（论文）}][\song{}\xiaowuhao{}第\thepage 页] % 偶数页
+  {}{{\song{}\xiaowuhao{}东南大学2017届本科生毕业设计（论文）}}{\song{}\xiaowuhao{}第\thepage 页} % 奇数页
+  \setfoot{}{}{}
   \headrule
 }
 \newpagestyle{seufrontstyle}{
-  \sethead[][{\song{}\xiaowuhao{}东南大学\@degree{}学位论文}][]
-  {}{{\song{}\xiaowuhao{}东南大学\@degree{}学位论文}}{}
-  \setfoot{}{\thepage}{}
-  \headrule
+  \pagestyle{seunolabelstyle}
 }
 \newpagestyle{seunolabelstyle}{
-  \sethead[][{\song{}\xiaowuhao{}东南大学\@degree{}学位论文}][]
-  {}{{\song{}\xiaowuhao{}\chaptertitle}}{}
-  \setfoot{}{\thepage}{}
+  \sethead[][{\song{}\xiaowuhao{}东南大学2017届本科生毕业设计（论文）}][]
+  {}{{\song{}\xiaowuhao{}东南大学2017届本科生毕业设计（论文）}}{}
+  \setfoot{}{}{}
   \headrule
 }
 \renewpagestyle{plain}{
-  \setfoot{}{\thepage}{}
+  \pagestyle{seunolabelstyle}
 }
 \renewcommand{\author}[2]{
   \def\@author{#1}
@@ -492,8 +500,7 @@ BoldItalicFont=timesbi.ttf
     \linespacing{1.0}
     \begin{center}
       \vspace*{20pt}
-      \includegraphics[height=2cm]{figures/seu-badge-logo}
-      \quad \includegraphics[height=2cm]{figures/seu-text-logo} \\
+      \includegraphics[height=2cm]{figures/seu-text-logo} \\
       \vspace*{60pt}
       \yihao\hei \bachelortitle \\
       \vspace*{60pt}
@@ -502,7 +509,7 @@ BoldItalicFont=timesbi.ttf
       
       % my change
       {\xiaoerhao\song\titlepre}
-      {\erhao\song \parbox[t]{16em}{\fs\uline{\hfill\@title\hfill}}}\\
+      {\erhao\song \parbox[t]{16em}{\fs\uline{\hfill \@title \hfill}}}\\
     
 
       \vspace*{40pt}
@@ -623,10 +630,8 @@ BoldItalicFont=timesbi.ttf
   \wuhao
   \fi
 }{
-  \par
-  \begin{description}
-  \item[关键词：] \@keywords
-  \end{description}
+  \\[1\baselineskip]
+  \textbf{关键词：} \@keywords
 }
 \newenvironment{englishabstract}[1]
 {
@@ -652,10 +657,8 @@ BoldItalicFont=timesbi.ttf
   \wuhao
   \fi
 }{
-  \par
-  \begin{description}
-  \item[KEY WORDS:] \@keywords
-  \end{description}
+  \\[1\baselineskip]
+  \textbf{KEY WORDS:} \@keywords
 }
 \let\tableofcontents@orig=\tableofcontents
 \renewcommand{\tableofcontents}
@@ -664,8 +667,10 @@ BoldItalicFont=timesbi.ttf
   {\linespacing{1.15}%
   \song\xiaosihao%
   \phantomsection
+  \pagestyle{seunolabelstyle}
   \tableofcontents@orig \par
-  \pagestyle{seunolabelstyle}\clearpage} %目录部分字体可采用小四号宋体。
+  \clearpage} %目录部分字体可采用小四号宋体。
+  \renewpagestyle{plain}{\pagestyle{seustyle}}
 }
 \newenvironment{terminology}[1][\@terminologytitle]
 {
@@ -694,13 +699,17 @@ BoldItalicFont=timesbi.ttf
 \let\originalcite=\cite
 \renewcommand{\cite}[1]{\textsuperscript{\originalcite{#1}}}
 \renewcommand{\citet}[1]{\originalcite{#1}}
-\bibliographystyle{seuthesis}
+
+% my change
+\newif\ifthu@bachelor
+\def\thudot{\ifthu@bachelor\else\unskip.\fi}
+\bibliographystyle{thuthesis}
 % my change
 %\renewcommand\@biblabel[1]{#1}  % Reference list option change from [1] to 1
 \let\orig@bibliography=\bibliography
 \renewcommand{\bibliography}[1]{
   \orig@bibliography{#1}
-  \pagestyle{seunolabelstyle}\clearpage % 使参考文献使用 seunolabel 页面样式
+  \pagestyle{seustyle}\clearpage % 使参考文献使用 seunolabel 页面样式
   \pagestyle{seufrontstyle}} % 恢复原有样式给后续部分
 \newenvironment{Acknowledgement}[1][\@acknowledgementtitle]
 {%
@@ -708,7 +717,7 @@ BoldItalicFont=timesbi.ttf
   \phantomsection
   \addcontentsline{toc}{chapter}{\@acknowledgementtitletoc}
   \chapter*{#1}
-  \song\wuhao
+  \song\xiaosihao %my change
 }{\par}
 \newenvironment{Appendix}
 {%

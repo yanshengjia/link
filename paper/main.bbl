@@ -1,147 +1,223 @@
-\begin{thebibliography}{23}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{10}
 
-\bibitem[Limaye et al.(2010)]{limaye2010annotating}
+\bibitem{limaye2010annotating}
 Limaye G, Sarawagi S, Chakrabarti S.
 \newblock Annotating and searching web tables using entities, types and
-  relationships[J].
-\newblock PVLDB, 2010, 3(1-2):1338--1347.
+  relationships.
+\newblock PVLDB, 2010, 3(1-2):1338--1347
+\thudot
 
-\bibitem[Suchanek et al.(2007)]{suchanek2007yago}
+\bibitem{suchanek2007yago}
 Suchanek F~M, Kasneci G, Weikum G.
-\newblock Yago: a core of semantic knowledge[C].
-\newblock In: WWW.
-\newblock 2007. 697--706.
+\newblock Yago: a core of semantic knowledge.
+\newblock  WWW, 2007.
+\newblock  697--706
+\thudot
 
-\bibitem[Auer et al.(2007)]{auer2007dbpedia}
-Auer S, Bizer C, Kobilarov G, et al.
-\newblock Dbpedia: A nucleus for a web of open data[C].
-\newblock In: ISWC.
-\newblock 2007. 722--735.
+\bibitem{auer2007dbpedia}
+Auer S, Bizer C, Kobilarov G, et~al.
+\newblock Dbpedia: A nucleus for a web of open data.
+\newblock  ISWC, 2007.
+\newblock  722--735
+\thudot
 
-\bibitem[Bollacker et al.(2008)]{bollacker2008freebase}
-Bollacker K, Evans C, Paritosh P, et al.
+\bibitem{bollacker2008freebase}
+Bollacker K, Evans C, Paritosh P, et~al.
 \newblock Freebase: a collaboratively created graph database for structuring
-  human knowledge[C].
-\newblock In: SIGMOD.
-\newblock 2008. 1247--1250.
+  human knowledge.
+\newblock  SIGMOD, 2008.
+\newblock  1247--1250
+\thudot
 
-\bibitem[Niu et al.(2011)]{niu2011zhishi}
-Niu X, Sun X, Wang H, et al.
-\newblock Zhishi. me-weaving chinese linking open data[C].
-\newblock In: ISWC.
-\newblock 2011. 205--220.
+\bibitem{niu2011zhishi}
+Niu X, Sun X, Wang H, et~al.
+\newblock Zhishi. me-weaving chinese linking open data.
+\newblock  ISWC, 2011.
+\newblock  205--220
+\thudot
 
-\bibitem[T.~Berners-Lee(2001)]{berners2001}
-T.~Berners-Lee O~L, J.~Hendler.
-\newblock The semantic web[J].
-\newblock Scientific American, 2001.
+\bibitem{berners2001semantic}
+Berners-Lee T, Hendler J, Lassila O, et~al.
+\newblock The semantic web.
+\newblock Scientific american, 2001, 284(5):28--37
+\thudot
 
-\bibitem[Hignette et al.(2009)]{hignette2009fuzzy}
-Hignette G, Buche P, Dibie-Barth{\'e}lemy J, et al.
-\newblock Fuzzy annotation of web data tables driven by a domain ontology[C].
-\newblock In: ESWC.
-\newblock 2009. 638--653.
+\bibitem{hignette2009fuzzy}
+Hignette G, Buche P, Dibie-Barth{\'e}lemy J, et~al.
+\newblock Fuzzy annotation of web data tables driven by a domain ontology.
+\newblock  ESWC, 2009.
+\newblock  638--653
+\thudot
 
-\bibitem[Mulwad et al.(2013)]{mulwad2013semantic}
+\bibitem{mulwad2013semantic}
 Mulwad V, Finin T, Joshi A.
-\newblock Semantic message passing for generating linked data from tables[C].
-\newblock In: ISWC.
-\newblock 2013. 363--378.
+\newblock Semantic message passing for generating linked data from tables.
+\newblock  ISWC, 2013.
+\newblock  363--378
+\thudot
 
-\bibitem[Mu{\~n}oz et al.(2014)]{munoz2014using}
+\bibitem{munoz2014using}
 Mu{\~n}oz E, Hogan A, Mileo A.
-\newblock Using linked data to mine RDF from wikipedia's tables[C].
-\newblock In: WSDM.
-\newblock 2014. 533--542.
+\newblock Using linked data to mine rdf from wikipedia's tables.
+\newblock  WSDM, 2014.
+\newblock  533--542
+\thudot
 
-\bibitem[Syed et al.(2010)]{syed2010exploiting}
-Syed Z, Finin T, Mulwad V, et al.
-\newblock Exploiting a web of semantic data for interpreting tables[C].
-\newblock In: WebSci.
-\newblock 2010. 5.
+\bibitem{syed2010exploiting}
+Syed Z, Finin T, Mulwad V, et~al.
+\newblock Exploiting a web of semantic data for interpreting tables.
+\newblock  WebSci, volume~5, 2010
+\thudot
 
-\bibitem[Venetis et al.(2011)]{venetis2011recovering}
-Venetis P, Halevy A, Madhavan J, et al.
-\newblock Recovering semantics of tables on the web[J].
-\newblock PVLDB, 2011, 4(9):528--538.
+\bibitem{venetis2011recovering}
+Venetis P, Halevy A, Madhavan J, et~al.
+\newblock Recovering semantics of tables on the web.
+\newblock PVLDB, 2011, 4(9):528--538
+\thudot
 
-\bibitem[Cafarella et al.(2008)]{cafarella2008webtables}
-Cafarella M~J, Halevy A, Wang D~Z, et al.
-\newblock Webtables: exploring the power of tables on the web[J].
-\newblock PVLDB, 2008, 1(1):538--549.
+\bibitem{cafarella2008webtables}
+Cafarella M~J, Halevy A, Wang D~Z, et~al.
+\newblock Webtables: exploring the power of tables on the web.
+\newblock PVLDB, 2008, 1(1):538--549
+\thudot
 
-\bibitem[Zhang(2014){\natexlab{a}}]{zhang2014towards}
+\bibitem{zhang2014towards}
 Zhang Z.
-\newblock Towards efficient and effective semantic table interpretation[C].
-\newblock In: ISWC.
-\newblock 2014. 487--502.
+\newblock Towards efficient and effective semantic table interpretation.
+\newblock  ISWC, 2014.
+\newblock  487--502
+\thudot
 
-\bibitem[Zhang(2014){\natexlab{b}}]{zhang2014learning}
+\bibitem{zhang2014learning}
 Zhang Z.
-\newblock Learning with partial data for semantic table interpretation[C].
-\newblock In: EKAW.
-\newblock 2014. 607--618.
+\newblock Learning with partial data for semantic table interpretation.
+\newblock  EKAW, 2014.
+\newblock  607--618
+\thudot
 
-\bibitem[Bhagavatula et al.(2015)]{bhagavatula2015tabel}
+\bibitem{bhagavatula2015tabel}
 Bhagavatula C~S, Noraset T, Downey D.
-\newblock TabEL: Entity Linking in Web Tables[C].
-\newblock In: ISWC.
-\newblock 2015. 425--441.
+\newblock Tabel: Entity linking in web tables.
+\newblock  ISWC, 2015.
+\newblock  425--441
+\thudot
 
-\bibitem[Shen et al.(2012)]{shen2012liege}
-Shen W, Wang J, Luo P, et al.
-\newblock LIEGE:: link entities in web lists with knowledge base[C].
-\newblock In: SIGKDD.
-\newblock 2012. 1424--1432.
+\bibitem{shen2012liege}
+Shen W, Wang J, Luo P, et~al.
+\newblock Liege:: link entities in web lists with knowledge base.
+\newblock  SIGKDD, 2012.
+\newblock  1424--1432
+\thudot
 
-\bibitem[Pereira(2014)]{pereira2014entity}
+\bibitem{pereira2014entity}
 Pereira B.
 \newblock Entity linking with multiple knowledge bases: An ontology
-  modularization approach[C].
-\newblock In: ISWC.
-\newblock 2014. 513--520.
+  modularization approach.
+\newblock  ISWC, 2014.
+\newblock  513--520
+\thudot
 
-\bibitem[T.~Zhang(2013){\natexlab{a}}]{zhang2013cross}
-T.~Zhang J~Z, K.~Liu.
-\newblock Wu C, Wang H, Qu J, Yu Y[C].
-\newblock In: IJCAI.
-\newblock 2013. 2218–--2224.
+\bibitem{tong2001support}
+Tong S, Koller D.
+\newblock Support vector machine active learning with applications to text
+  classification.
+\newblock Journal of machine learning research, 2001, 2(Nov):45--66
+\thudot
 
-\bibitem[W.~Shen(2012)]{shen2012ontology}
-W.~Shen P~L~M~W, J.~Wang.
-\newblock A graph-based approach for ontology population with named
-  entities[C].
-\newblock In: CIKM.
-\newblock 2012. 345–--354.
+\bibitem{shen2012graph}
+Shen W, Wang J, Luo P, et~al.
+\newblock A graph-based approach for ontology population with named entities.
+\newblock  Proceedings of the 21st ACM international conference on Information
+  and knowledge management. ACM, 2012.
+\newblock  345--354
+\thudot
 
-\bibitem[X.~Ling(2012)]{ling2012}
-X.~Ling D~S~W.
-\newblock Fine-grained entity recognition[C].
-\newblock In: AAAI.
-\newblock 2012.
+\bibitem{ling2012fine}
+Ling X, Weld D~S.
+\newblock Fine-grained entity recognition.
+\newblock  AAAI. Citeseer, 2012
+\thudot
 
-\bibitem[T.~Zhang(2013){\natexlab{b}}]{zhang2013zhishilink}
-T.~Zhang J~Z, K.~Liu.
-\newblock ZhishiLink: Entity Linking on Zhishi.me[C].
-\newblock In: Proceedings of the 7th CSWS.
-\newblock 2013. 161--174.
+\bibitem{wu2013zhishilink}
+Wu C, Wang H, Qu J, et~al.
+\newblock Zhishilink: Entity linking on zhishi.me.
+\newblock  CSWS, 2013.
+\newblock  161--174
+\thudot
 
-\bibitem[Dredze~M(2010)]{dredze2010entity}
-Dredze~M R~D~G~A~F~T, McNamee~P.
-\newblock Entity Disambiguation for Knowledge Base Population[C].
-\newblock In: Proceedings of the 23rd International Conference on Computational
-  Linguistics.
-\newblock 2010. 277--285.
+\bibitem{dredze2010entity}
+Dredze M, McNamee P, Rao D, et~al.
+\newblock Entity disambiguation for knowledge base population.
+\newblock  Proceedings of the 23rd International Conference on Computational
+  Linguistics. Association for Computational Linguistics, 2010.
+\newblock  277--285
+\thudot
 
-\bibitem[Navigli and Ponzetto(2010)]{navigli2010babelnet}
+\bibitem{shen2015entity}
+Shen W, Wang J, Han J.
+\newblock Entity linking with a knowledge base: Issues, techniques, and
+  solutions.
+\newblock IEEE Transactions on Knowledge and Data Engineering, 2015,
+  27(2):443--460
+\thudot
+
+\bibitem{page1999pagerank}
+Page L, Brin S, Motwani R, et~al.
+\newblock The pagerank citation ranking: Bringing order to the web.
+\newblock Technical report, Stanford InfoLab, 1999
+\thudot
+
+\bibitem{stewart1994introduction}
+Stewart W~J.
+\newblock Introduction to the numerical solutions of Markov chains.
+\newblock Princeton Univ. Press, 1994
+\thudot
+
+\bibitem{haveliwala2003topic}
+Haveliwala T~H.
+\newblock Topic-sensitive pagerank: A context-sensitive ranking algorithm for
+  web search.
+\newblock IEEE transactions on knowledge and data engineering, 2003,
+  15(4):784--796
+\thudot
+
+\bibitem{langville2011google}
+Langville A~N, Meyer C~D.
+\newblock Google's PageRank and beyond: The science of search engine rankings.
+\newblock Princeton University Press, 2011
+\thudot
+
+\bibitem{tauchen1986finite}
+Tauchen G.
+\newblock Finite state markov-chain approximations to univariate and vector
+  autoregressions.
+\newblock Economics letters, 1986, 20(2):177--181
+\thudot
+
+\bibitem{navigli2010babelnet}
 Navigli R, Ponzetto S~P.
-\newblock BabelNet: Building a very large multilingual semantic network[C].
-\newblock In: ACL.
-\newblock 2010. 216--225.
+\newblock Babelnet: Building a very large multilingual semantic network.
+\newblock  ACL, 2010.
+\newblock  216--225
+\thudot
+
+\bibitem{fernandez2014we}
+Fern{\'a}ndez-Delgado M, Cernadas E, Barro S, et~al.
+\newblock Do we need hundreds of classifiers to solve real world classification
+  problems?
+\newblock The Journal of Machine Learning Research, 2014, 15(1):3133--3181
+\thudot
+
+\bibitem{craswell2009mean}
+Craswell N.
+\newblock Mean reciprocal rank.
+\newblock  Encyclopedia of Database Systems. Springer, 2009: 1703--1703
+\thudot
+
+\bibitem{zhang2013cross}
+Zhang T, Liu K, Zhao J, et~al.
+\newblock Cross lingual entity linking with bilingual topic model.
+\newblock  IJCAI, 2013
+\thudot
 
 \end{thebibliography}

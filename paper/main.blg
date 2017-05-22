@@ -1,65 +1,54 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
-The style file: seuthesis.bst
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+The style file: thuthesis.bst
 Database file #1: seuthesis.bib
-Too many commas in name 1 of "W. Shen, J. Wang, P. Luo, M. Wang" for entry shen2012ontology
-while executing---line 3458 of file seuthesis.bst
-Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
-while executing---line 3458 of file seuthesis.bst
-Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
-while executing---line 3458 of file seuthesis.bst
-You can't pop an empty literal stack for entry berners2001
-while executing---line 3540 of file seuthesis.bst
-You can't pop an empty literal stack for entry berners2001
-while executing---line 3540 of file seuthesis.bst
-Too many commas in name 1 of "W. Shen, J. Wang, P. Luo, M. Wang" for entry shen2012ontology
-while executing---line 3540 of file seuthesis.bst
-Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
-while executing---line 3540 of file seuthesis.bst
-Too many commas in name 1 of "Dredze M, McNamee P, Rao D, Gerber A, Finin T" for entry dredze2010entity
-while executing---line 3540 of file seuthesis.bst
-You've used 23 entries,
-            6690 wiz_defined-function locations,
-            1308 strings with 11637 characters,
-and the built_in function-call counts, 8311 in all, are:
-= -- 776
-> -- 246
-< -- 10
-+ -- 141
-- -- 58
-* -- 555
-:= -- 1157
-add.period$ -- 88
-call.type$ -- 23
-change.case$ -- 23
-chr.to.int$ -- 21
-cite$ -- 23
-duplicate$ -- 356
-empty$ -- 1010
-format.name$ -- 97
-if$ -- 1950
-int.to.chr$ -- 3
-int.to.str$ -- 24
-missing$ -- 23
-newline$ -- 142
-num.names$ -- 46
-pop$ -- 194
+Repeated entry---line 282 of file seuthesis.bib
+ : @article{tong2001support
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--there's a publisher but no address in stewart1994introduction
+Warning--there's a publisher but no address in langville2011google
+Warning--there's a publisher but no address in craswell2009mean
+You've used 32 entries,
+            2299 wiz_defined-function locations,
+            684 strings with 8400 characters,
+and the built_in function-call counts, 17500 in all, are:
+= -- 1812
+> -- 397
+< -- 18
++ -- 186
+- -- 93
+* -- 1286
+:= -- 2244
+add.period$ -- 84
+call.type$ -- 32
+change.case$ -- 31
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 1254
+empty$ -- 1798
+format.name$ -- 118
+if$ -- 4074
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 33
+newline$ -- 211
+num.names$ -- 32
+pop$ -- 152
 preamble$ -- 1
-purify$ -- 23
+purify$ -- 0
 quote$ -- 0
-skip$ -- 254
+skip$ -- 407
 stack$ -- 0
-substring$ -- 580
-swap$ -- 27
-text.length$ -- 0
+substring$ -- 2341
+swap$ -- 179
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 92
-warning$ -- 0
-while$ -- 61
-width$ -- 0
-write$ -- 307
-(There were 8 error messages)
+type$ -- 0
+warning$ -- 3
+while$ -- 194
+width$ -- 34
+write$ -- 401
+(There was 1 error message)
