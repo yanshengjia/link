@@ -1,0 +1,166 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+\documentclass[bachelor, printoneside]{seuthesis} % 本科
+% \documentclass[master]{seuthesis} % 硕士
+% \documentclass[doctor]{seuthesis} % 博士
+% \documentclass[engineering]{seuthesis} % 工程硕士
+\usepackage{CJK,CJKnumb}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+\usepackage{bm} 
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+% 导言区
+\begin{document}
+\categorynumber{000}    % 分类采用《中国图书资料分类法》
+\UDC{000}               %《国际十进分类法UDC》的类号2
+\secretlevel{公开}        % 学位论文密级分为"公开"、"内部"、"秘密"和"机密"四种
+\studentid{09013119}    % 学号要完整，前面的零不能省略。
+
+\title{基于多知识库的表格实体链接研究}{副标题}{Entity Linking in Web Tables with Multiple Linked Knowledge Bases}{subtitle}
+\author{严晟嘉}{Shengjia Yan}
+\advisor{李慧颖}{教授}{Huiying Li}{Prof.}
+\coadvisor{漆桂林}{教授}{Guilin Qi}{Prof.}
+
+% \degree{工学硕士} % 详细学位名称
+\major[12em]{计算机科学与技术}
+\defenddate{答辩日期}
+\authorizedate{学位授予日期}
+\department{计算机科学与工程}{Computer Science \& Engineering}
+\duration{2017.02 — \ 2017.06}
+\address{东南大学九龙湖校区}
+\thanks{}
+\maketitle
+
+% 中文摘要
+\begin{abstract}{实体链接，Web表格，多知识库}
+在当今的万维网上包含着超大规模的蕴含丰富价值的关系型数据，而这些关系型数据大多以 HTML 表格 (也就是 Web 表格) 的形式呈现。
+抽取 Web 表格中的语义来生产机器可以理解的知识如今已经成为了一个热门的研究领域。
+从 Web 表格中抽取出丰富且高质量的语义信息是一个充满挑战和价值的任务，其中关键一步就是实体链接 (Entity Linking)，其目的在于建立表格中的字符串指称 (Mention) 到知识库中的相应的参考实体 (Entity) 的链接。\par
+
+目前大部分的实体链接都是使用单个特定的跨领域知识库来作为实体数据的来源。
+但由于单个知识库中的实体数量有限且对实体的覆盖范围不广，从而导致单知识库实体链接中实体缺失和链接错误的问题常有发生。
+本文提出了两个通用的表格实体链接的新方法。
+与先前的工作不同的是，这两个方法都使用多知识库而不是单知识库作为实体数据的来源，来提升表格实体链接的质量。\par
+
+方法一是一个``两步走''的方法，首先将一个基于图模型的随机游走算法应用于单知识库的表格实体链接，然后使用多知识库间已有的和新学习到的``sameAs''关系来提升前一步中实体链接结果的质量。
+方法二融合了方法一中的两步，修改了方法一中图模型中的节点定义，直接将多知识库间已有的和新学习到的``sameAs''关系融合进了图模型，从而实现了一步到位的效果。\par
+
+我设计了一些对比实验来比较本文提出的两个方法与目前最先进的实体链接系统 (TabEL, LIEGE) 的效果差异。
+所有实验都是在基于 Zhishi.me 人工标注的 Web 表格上进行的，Zhishi.me 涵盖了三个最大的中文百科知识库：百度百科，互动百科和中文维基百科。
+实验表明，文中提出的两个方法在准确率、召回率、F1 值等评价指标上表现得都很不错。
+除此之外，我在实体消岐时引入了更多的有效的特征，还增加了一些有意义的功能，比如``sameAs''关系的学习。
+实验中用到的已人工标注的表格语料库和算法的实现代码都是开放的，供未来的研究工作使用。
+\end{abstract}
+
+% 英文摘要
+\begin{englishabstract}{Entity Linking, Web Tables, Multiple Linked Knowledge Bases}
+The World-Wide Web contains a huge scale of valuable relational data, which are embedded in HTML tables (i.e. Web tables).
+It's a challenging and valuable task that extracting abundant and high-quality semantics of Web tables is.
+A key step in extracting the semantics of Web tables is Entity Linking (EL), which aims to map the string mentions in table cells to their referent entities in a Knowledge Base (KB).\par
+
+At present most entity linking researches use single cross-domain KBs as source of entities.
+However, the quantity of entities and the coverage in a single KB is limited.
+Thus, the issues of entity absence and linking error often appear in the process of EL in a single KB.
+In this paper, I present two new approaches for EL in Web tables.
+Different from previous work, the proposed approaches replace a single KB with multiple linked KBs as the sources of entities to improve the quality of EL.
+
+Approach One is a two-step method.
+I first apply a random walk algorithm based on a general probabilistic graphical model to EL in Web tables with each single KB.
+Then, I leverage the existing and newly learned ``sameAs'' relations between the entities from different KBs to help improve the results of EL in the first step.
+Approach Two merges two steps from Approach One.
+I modify node definitions in the probabilistic graphical model in Approach One and directly add the ``sameAs'' relations between the entities from different KBs into the model.\par
+
+Some comparison experiments are designed to compare the effect of my approaches proposed in this paper with the state-of-the-art table’s EL systems (TabEL, LIEGE).
+All experiments are conducted on the sampled Web tables with Zhishi.me, which consists of three biggest linked Chinese encyclopedic KBs: Baidubaike, Hudongbaike and Zhwiki.
+The experimental results show that my approaches have a good performence in different evaluation metrics, such as precision, recall and F1 value.
+Besides, I adds some meaningful functions, such as iterative learning between EL and ``sameAs'' relations.
+I also make my manually annotated table corpus and the code of the approaches publicly available for future work.
+\end{englishabstract}
+
+% 目录
+\tableofcontents
+
+% 术语表
+% \input{terminology}
+
+% 开始正文
+\begin{Main}
+
+\input{introduction}
+\input{preliminary}
+\input{description}
+\input{implementation}
+\input{experiments}
+\input{conclusionfuturework}
+
+\end{Main}
+% 结束正文
+
+% 致谢
+\begin{Acknowledgement}
+在这篇本科毕业论文撰写的过程中，很多人帮助了我，在此我向他们致以我最高的敬意。\par
+
+首先是我的家人，是你们的支持，让我能够顺利完成学业，成为一个有独立思想的人。
+
+我要感谢我的导师漆桂林教授。
+从我大二开始，他就悉心地指导我进行数据挖掘和实体链接方面的学习和研究。
+在我大三那年，我和计算机学院的另外四名同学一起在他的指导下开展了 SRTP 项目``基于社交数据的实体链接研究''并最终取得了丰厚的成果。
+在我的毕业设计中，他给出了许多建设性意见来启发我。
+漆老师是学术上的导师，也是人生上的导师，他严谨的科研态度和务实的精神一直影响着我。
+不管是在生活中还是在学习中，他都给我提供了很多帮助。
+在此，我要对他表示我的尊敬之情与感谢之意！\par
+
+我要感谢我的毕设导师李慧颖教授。
+她耐心细致的教导为我的毕业设计保驾护航。\par
+
+我要感谢我的师兄吴天星博士和刘太云学长。
+是他们不断地督促我开展科研和学习新知，是他们在我遇到问题的时候耐心回答我的疑问，是他们的创造力不断启发着我。
+与吴天星博士每周一次的讨论给我带来了很多科研上的新思路新方法。
+没有他们的指导和帮助，我的毕设不可能顺利地完成。
+同时我还要感谢知识科学与工程实验室，感谢实验室给我带来的经历与帮助。\par
+
+我要感谢我的4位同学许亮、朴智新、王瑞明和段尚甫。
+在大学四年时间里，我们互相关照共同进步，一起留下了许多珍贵而美好的记忆。
+在大三的 SRTP 项目中，我们就并肩作战，共同实现项目的各类算法和实验。
+是他们的才智与能力让项目中实体链接的研究开展得高效顺利。
+他们也为我的毕设提供了很多技术上的帮助与建议。\par
+
+我要感谢计算机科学与工程学院。
+学院给我提供了一个优质的平台来自我成长，学院丰富的教学资源让我受益颇丰。
+此外，我要感谢学院里一直默默为学生付出的工作人员，比如吕倩老师和洪小丽老师。
+她们给我的学习和生活上提供了很多的便利。\par
+
+在东南大学的四年，可能是我人生中最美妙的四年。
+我在这里学到了很多，成长了很多，也认识了许多卓越的老师和同学。
+这都会是我人生中最宝贵的精神财富。
+本科毕业论文意味着大学四年的结束，也代表着一个新的开始。
+是时候跟美好的大学生活说再见了，是时候去勇敢地拥抱新生活了！\par
+
+最后，谨以此文献给我的母亲沈芳。
+\end{Acknowledgement}
+
+% 参考文献
+\bibliography{seuthesis}
+
+% \begin{Appendix}
+%   \chapter{附录}
+%   附录
+% \end{Appendix}
+
+\newpage
+\printindex % 索引
+
+% \begin{thebibliography}{99}
+% \bibliographystyle{spmpsci}
+% \bibliography{seuthesis}
+
+% 作者简历
+% \begin{Resume}
+% 作者简介
+% \end{Resume}
+
+\end{document}

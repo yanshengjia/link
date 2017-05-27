@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: thuthesis.bst
+Database file #1: seuthesis.bib
+Repeated entry---line 282 of file seuthesis.bib
+ : @article{tong2001support
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--there's a publisher but no address in stewart1994introduction
+Warning--there's a publisher but no address in langville2011google
+Warning--there's a publisher but no address in craswell2009mean
+You've used 32 entries,
+            2313 wiz_defined-function locations,
+            688 strings with 8429 characters,
+and the built_in function-call counts, 22693 in all, are:
+= -- 2383
+> -- 397
+< -- 18
++ -- 186
+- -- 93
+* -- 1866
+:= -- 2815
+add.period$ -- 84
+call.type$ -- 32
+change.case$ -- 31
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 1825
+empty$ -- 2387
+format.name$ -- 118
+if$ -- 5234
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 33
+newline$ -- 211
+num.names$ -- 32
+pop$ -- 152
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 407
+stack$ -- 0
+substring$ -- 3483
+swap$ -- 179
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 203
+width$ -- 34
+write$ -- 401
+(There was 1 error message)

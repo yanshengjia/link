@@ -1,0 +1,79 @@
+\chapter{实验与评估}
+在本章中，我使用 Zhishi.me 中的三个相互链接的知识库 (中文维基百科，百度百科和互动百科) 评估了第三章中提出的两个方法。
+整个评估过程基于人工标注的 Web 表格。
+并且将这两个方法与两个先进的 Web 表格实体链接系统以及我的方法的两个退化版本 (Degenerate Version) 进行比较。
+
+\section{评价标准}
+我在每张人工标注过的 Web 表格上使用本文中的方法进行实体链接并用设计好的对比实验进行对比。
+在实验中，使用了四个指标 (Metric) 来衡量链接结果的质量。
+它们分别是准确率 (Precision)，召回率 (Recall)，F1值 (F1-score) 和 平均倒数排名 (Mean Reciprocal Rank\cite{craswell2009mean}, MRR)。
+这些评价指标普遍用于文本的实体链接任务\cite{bhagavatula2015tabel}。
+F1值是准确率和召回率的调和平均数。
+平均倒数排名 (MRR) 用来评估指称的候选实体排名列表的质量。
+对于一个指称 $m$，实体链接的倒数排名 (Reciprocal Rank) 是 $m$ 的正确参考实体在候选排名列表中的排名的倒数。
+比如，$m$ 的正确参考实体在由实体链接算法生成的候选实体排名列表中排在第二位，则倒数排名为 $\frac{1}{2}$。
+
+
+\section{几种方法的比较}
+我对以下方法进行了对比试验。
+
+\begin{itemize}
+  \item[$\bullet$] $TabEL$: TabEL\cite{bhagavatula2015tabel} 是目前 Web 表格实体链接领域先进的系统，它使用一种使用了许多通用特征的集体分类技术来对一个给定 Web 表格中的所有指称进行联合消岐。除此之外，任何知识库都可以被应用于 TabEL 来执行 Web 表格上的实体链接任务。
+  \item[$\bullet$] $LIEGE$: LIEGE\cite{shen2012liege} 是一个通用方法，用于将形如列表 (List-like) 的 Web 表格 (多行一列) 中的字符串指称链接到给定知识库中的参考实体。它提出了一种使用了三个特征的迭代置换算法来执行 Web 列表中的实体链接。这个方法同样可以用于任何知识库上的 Web 表格实体链接。
+  \item[$\bullet$] $single$: 是 $approach1$ 的一个退化版本。它只使用了方法一中单知识库实体链接的算法，并没有运用三条启发式规则和``sameAs''关系来执行多知识库对实体链接结果的优化算法。
+  \item[$\bullet$] $multiple$: 也是 $approach1$ 的一个退化版本。在执行完单知识库实体链接算法后，它仅使用了已存在的``sameAs''关系 (不包括新学习到的``sameAs''关系) 来提升实体链接结果质量。
+  \item[$\bullet$] $approach1$: 即为~\ref{approach1} 节描述的方法一。它分为两步，先用每个单知识库进行实体链接，然后用多知识库间的``sameAs''关系进行链接结果的优化。它采用了一种基于图的随机游走算法来实现一个表格中所有指称的联合消岐。同样，它也是一个通用算法，任何拥有丰富 RDF 三元组格式数据的知识库都可以作为该方法的输入。
+  \item[$\bullet$] $approach2$: 即为~\ref{approach2} 节描述的方法二。它融合了方法一中的两步，使用了一个统一的图模型来表示一个给定表格的所有指称和候选实体以及多知识库间的``sameAs''关系。它也是一个适用于任何知识库的多知识库实体链接算法。
+\end{itemize}
+
+% Table
+\begin{table}[htbp]
+\centering
+\caption{由三个单知识库衡量的总体实体链接结果}
+\label{result}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Knowledge Base & Approach & Precision & Recall & F1-score & MRR \\
+\hline
+\multirow{6}{*}{Chinese Wikipedia} & TabEL & 0.823 & 0.809 & 0.816 & 0.858 \\
+\cline{2-6} & LIEGE & 0.778 & 0.747 & 0.762 & 0.813 \\
+\cline{2-6} & single & 0.830 & 0.797 & 0.813 & 0.860 \\
+\cline{2-6} & multiple & 0.861 & 0.821 & 0.841 & 0.881 \\
+\cline{2-6} & approach1 & \textbf{0.873} & \textbf{0.828} & \textbf{0.850} & \textbf{0.887} \\
+\cline{2-6} & approach2 & \textbf{0.856} & \textbf{0.830} & \textbf{0.843} & \textbf{0.814} \\
+\hline
+\multirow{6}{*}{Baidu Baike} & TabEL & 0.659 & 0.628 & 0.643 & 0.707 \\
+\cline{2-6} & LIEGE & 0.629 & 0.576 & 0.601 & 0.670 \\
+\cline{2-6} & single & 0.696 & 0.652 & 0.673 & 0.725 \\
+\cline{2-6} & multiple & 0.758 & 0.705 & 0.731 & 0.746 \\
+\cline{2-6} & approach1 & \textbf{0.774} & \textbf{0.727} & \textbf{0.750} & \textbf{0.776} \\
+\cline{2-6} & approach2 & \textbf{0.769} & \textbf{0.747} & \textbf{0.758} & \textbf{0.780} \\
+\hline
+\multirow{6}{*}{Hudong Baike} & TabEL & 0.681 & 0.649 & 0.665 & 0.780 \\
+\cline{2-6} & LIEGE & 0.661 & 0.632 & 0.646 & 0.751 \\
+\cline{2-6} & single & 0.708 & 0.642 & 0.673 & 0.768 \\
+\cline{2-6} & multiple & 0.729 & 0.700 & 0.714 & 0.787 \\
+\cline{2-6} & approach1 & \textbf{0.744} & \textbf{0.708} & \textbf{0.726} & \textbf{0.796} \\
+\cline{2-6} & approach2 & \textbf{0.731} & \textbf{0.712} & \textbf{0.721} & \textbf{0.788} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\section{结果分析}
+表格~\ref{result} 给出了本文中两个实体链接方法的总体结果和由三个单知识库分别衡量的对比实验的结果，从中我可以发现：
+\begin{itemize}
+  \item[$\bullet$] 方法一中的单知识库实体链接方法，也就是 $single$，其效果能够与当前非常先进的实体链接系统 TabEL 相媲美，并且胜过 LIEGE。这反应了本文中提出的方法的有效性。
+  \item[$\bullet$] $multiple$ 方法在准确率、召回率、F1值和 MRR 上总是比 $single$ 方法更好。这表明方法一中提出的启发式规则在提升单知识库实体链接结果上是非常有价值的。
+  \item[$\bullet$] 方法一，也就是 $approach1$，在准确率这个指标上比其他所有对比方法都高，这证实了方法一在多知识库 Web 表格实体链接上的优越性。与 $multiple$ 方法相比，方法一具有更好的表现，这体现了新学习到的``sameAs''关系对于解决用不同知识库进行单知识库实体链接 ($single$) 导致的链接冲突问题是很有帮助的。
+  \item[$\bullet$] 方法二，也就是 $approach2$，在准确率这个指标上仅次于方法一，这体现出方法二也是非常有效的。而且与 $approach1$ 相比，$approach2$ 在召回率这个指标上表现更佳，这说明方法一中的启发式规则由于不稳定性导致没有覆盖到一些正确的参考实体，而方法二弥补了这一点。
+\end{itemize}
+另外，我用整个 Zhishi.me 来衡量的方法一 ($approach1$) 的实体链接结果，并计算了准确率、召回率、F1值。
+准确率是0.831，召回率是\textbf{0.903}，F1值为0.866。
+可以发现召回率有了显著的提升，这表明多知识库的表格实体链接方法的确能够保证一个很好的实体覆盖度。
+
+
+\section{本章小结}
+本章首先介绍了对比试验的评价指标：准确率、召回率、F1值和 MRR。这些都是常见的实体链接算法的评价指标。
+然后描述了我设计的六组对比试验，并以表格的形式给出了对比结果。
+最后对实体链接的结果进行了对比分析，试验结果表明本文中提出的多知识库表格实体链接方法的有效性并且相对于单知识库实体链接能够有一个更好的实体覆盖度。
