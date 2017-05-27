@@ -25,7 +25,7 @@
 \contentsline {section}{\numberline {4.4}本章小结}{23}{section.4.4}
 \contentsline {chapter}{\numberline {5}实验与评估}{24}{chapter.5}
 \contentsline {section}{\numberline {5.1}评价标准}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}几种方法的比较}{24}{section.5.2}
+\contentsline {section}{\numberline {5.2}对比实验}{24}{section.5.2}
 \contentsline {section}{\numberline {5.3}结果分析}{25}{section.5.3}
 \contentsline {section}{\numberline {5.4}本章小结}{26}{section.5.4}
 \contentsline {chapter}{\numberline {6}总结与展望}{27}{chapter.6}
