@@ -1,0 +1,182 @@
+<html>
+<head>
+	<title>{{title}}</title>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<link href="static/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
+	<script>
+		function cmp(property)
+		{
+			return function (obj1, obj2)
+			{
+				a = obj1[property];
+				b = obj2[property];
+				if(a<b){
+					return 1;
+				}else{
+					return -1;
+				}
+			}
+		};
+
+		// 时间插件
+		Date.prototype.formate=function(fmt){
+			var o = {
+			"M+" : this.getMonth()+1, 		//月份
+			"d+" : this.getDate(), 			//日
+			"h+" : this.getHours()%12 == 0 ? 12 : this.getHours()%12, //小时
+			"H+" : this.getHours(), 		//小时
+			"m+" : this.getMinutes(), 		//分
+			"s+" : this.getSeconds(), 		//秒
+			"q+" : Math.floor((this.getMonth()+3)/3), //季度
+			"S" : this.getMilliseconds() 	//毫秒
+			};
+			var week = {
+			"0" : "\u65e5",
+			"1" : "\u4e00",
+			"2" : "\u4e8c",
+			"3" : "\u4e09",
+			"4" : "\u56db",
+			"5" : "\u4e94",
+			"6" : "\u516d"
+			};
+			if(/(y+)/.test(fmt)){
+				fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+			}
+			if(/(E+)/.test(fmt)){
+				fmt=fmt.replace(RegExp.$1, ((RegExp.$1.length>1) ? (RegExp.$1.length>2 ? "\u661f\u671f" : "\u5468") : "")+week[this.getDay()+""]);
+			}
+			for(var k in o){
+				if(new RegExp("("+ k +")").test(fmt)){
+					fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+				}
+			}
+			return fmt;
+		}
+
+		function init()
+		{
+			for(var i=0;i<nrow;i++)
+			{
+				result[i] = [];
+				for(var j=0;j<ncol;j++)
+				{
+					result[i][j] = {};
+					table[i][j]['candidates'].sort(cmp('score'));
+				}
+			}
+		}
+
+		var current_row=0;
+		var mark_count=0;
+		var current_col=-1;
+		var table = {%raw table%};
+		var nrow = table['nrow'];
+		var ncol = table['ncol'];
+		var table = table['data'];
+		var result = [];
+		init();
+		function saveAndJump(){
+			$.post("/mark",{
+				'pagenum': {{page}},
+				'result':JSON.stringify(result),
+				'status':'accept',
+				'time':new Date().formate("yyyy-MM-dd HH:mm:ss"),
+				'mark_ratio':mark_count+'/'+nrow*ncol},
+				function newtable(){
+					location.href="/";
+			});
+		}
+
+		function update(){
+			var oldr = current_row;
+			var oldl = current_col;
+			progress();
+			highlight(current_row,current_col,oldr,oldl);
+			var htmlcontent="";
+			var candidates = table[current_row][current_col]['candidates'];
+			for (var i = 0;i < candidates.length ; i++) {
+				htmlcontent += "<div><button class='btn' id='bt' value="+i;
+				htmlcontent += " type='button' style='padding:5px' onclick='entity_seleted("+i+")' >";
+				htmlcontent += candidates[i]['name'];
+				htmlcontent += '('+candidates[i]['score']+')</button></div>';
+				document.all.btlist.innerHTML = htmlcontent;
+			}
+		}
+
+		function highlight(new_row,new_col,old_row,old_col){
+			$("tr:eq("+old_row+")>td:eq("+old_col+")").css("background-color","#FFFFFF")
+			$("tr:eq("+new_row+")>td:eq("+new_col+")").css("background-color","#7EE900")
+			document.all.title.innerText = table[new_row][new_col]['mention'];
+		}
+
+		function progress(){
+			current_col++;
+			if (current_col==ncol) {
+				current_col=0; current_row++;
+			}
+			if (current_row==nrow) {
+				saveAndJump();
+			}
+			else if (table[current_row][current_col]['candidates'].length == 0) {
+				progress();
+			}
+			else if(table[current_row][current_col]['candidates'].length == 1){
+				result[current_row][current_col]['name'] = table[current_row][current_col]['candidates'][0]['name'];
+				result[current_row][current_col]['id'] = table[current_row][current_col]['candidates'][0]['id'];
+				progress();
+			}
+		}
+
+		function entity_seleted(selet){
+			result[current_row][current_col]['name'] = table[current_row][current_col]['candidates'][selet]['name'];
+			result[current_row][current_col]['id'] = table[current_row][current_col]['candidates'][selet]['id'];
+			mark_count++;
+			update();
+		}
+	</script>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<h3>
+				革命尚未成功，同志仍需努力<br /> 完成度（{{page}}/{{totalpage}}）
+			</h3>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="col-xs-6 span9">
+			<!--table class="table table-bordered"-->
+			<table border="1" cellpadding="5" cellspacing ="1" id="ServiceListTable">
+				<tbody>
+					{%for row in m_table%}
+					<tr>
+						{%for cell in row%}
+						<td>
+							{{cell['mention']}}
+						</td>
+						{%end%}
+					</tr>
+					{%end%}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-xs-6 span3" style="border:2px solid #000000;padding:5px">
+			<div>
+				<h3 id="title">
+				<script> document.write(table[current_row][current_col]['mention']) </script>
+				</h3>
+			</div>
+			<div id = 'btlist' style="border-spacing: 25px">
+				<script type="text/javascript">
+							update();
+				</script>
+				
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
